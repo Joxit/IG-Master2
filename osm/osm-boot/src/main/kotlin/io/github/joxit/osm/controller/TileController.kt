@@ -1,7 +1,6 @@
 package io.github.joxit.osm.controller
 
 import java.io.IOException
-import mil.nga.sf.geojson.GeoJsonObject
 
 /**
  * C'est le controlleur de l'application, il faut le déclarer comme tel et activer les CrossOrigin
@@ -19,7 +18,7 @@ class TileController {
    * @param y coordonée
    * @return l'image au format PNG
    */
-  fun getTile(z: Int, x: Int, y: Int): ByteArray? {
+  fun getTile(z: Int, x: Int, y: Int): ByteArray {
     TODO("À implémenter, lisez la JAVADOC et les consignes !")
   }
 
@@ -30,17 +29,7 @@ class TileController {
    * @return String representant le GeoJSON des prefectures
    */
   @Throws(IOException::class)
-  fun getPrefectures(): String? {
-    TODO("À implémenter, lisez la JAVADOC et les consignes !")
-  }
-
-  /**
-   * Cette méthode est le point d'entrée de l'API POIs sous persistence, il prend les requêtes sur l'entrée `/pois.geojson`.
-   * Attention, il doit renvoyer le header Content-Type application/json
-   *
-   * @return le geojson des POIs à renvoyer
-   */
-  fun getPOIs(): GeoJsonObject {
+  fun getPrefectures(): String {
     TODO("À implémenter, lisez la JAVADOC et les consignes !")
   }
 }

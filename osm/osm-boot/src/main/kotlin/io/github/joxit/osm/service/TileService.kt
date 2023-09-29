@@ -2,7 +2,6 @@ package io.github.joxit.osm.service
 
 import io.github.joxit.osm.model.Tile
 import java.io.IOException
-import mil.nga.sf.geojson.GeoJsonObject
 
 /**
  * Service pour retourner les tuiles.
@@ -18,7 +17,7 @@ class TileService {
    * @param tile qu'il faut renvoyer
    * @return le byte array au format png
    */
-  fun getTile(tile: Tile?): ByteArray? {
+  fun getTile(tile: Tile): ByteArray {
     TODO("À implémenter, lisez la JAVADOC et les consignes !")
   }
 
@@ -30,16 +29,6 @@ class TileService {
    */
   @Throws(IOException::class)
   fun getPrefectures(): String {
-    TODO("À implémenter, lisez la JAVADOC et les consignes !")
-  }
-
-  /**
-   * Il faudra créer votre DAO pour récuperer les données.
-   * Utilisez ce que vous voulez pour faire le DAO.
-   *
-   * @return les éléments contenus dans la base de données
-   */
-  fun getPOIs(): GeoJsonObject {
     TODO("À implémenter, lisez la JAVADOC et les consignes !")
   }
 }
