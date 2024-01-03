@@ -4,7 +4,7 @@ subtitle: Institut Galilée - Licence Informatique
 author: Jones Magloire
 date: 15 Janvier 2024
 theme: metropolis
-toc: true
+toc: false
 section-titles: false
 pagestyle: empty
 header-includes: |
