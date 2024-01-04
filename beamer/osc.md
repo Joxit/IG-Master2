@@ -22,7 +22,7 @@ build: pandoc -f markdown -st beamer osc.md -o osc.pdf --lua-filter code-filter.
 
 ## Parcours universitaire
 
-### Simple et efficace
+### Simple et efficace{.example}
 
 - Bac S : Science de l'Ingénieur (2010)
 - Licence (2010-2013)
@@ -42,18 +42,46 @@ build: pandoc -f markdown -st beamer osc.md -o osc.pdf --lua-filter code-filter.
 
 ### Takima{.alert}
 - 6 mois de stage (2015)
-  - 2 mois de formations
-  - 4 mois sur projet
+  - 2 mois de formations + 4 mois sur projet
 
 \centering
 \includegraphics[height=1cm,keepaspectratio]{images/takima.png}
 
-### Jawg Maps{.example}
+### Jawg Maps
 - 2015-2021: DevOPS / Expert Cartographie
 - 2022-: Chief Technical Officer (CTO / Directeur Technique)
 
 \centering
 \includegraphics[height=1cm,keepaspectratio]{images/jawg.png}
+
+## Parcours professionel
+
+### Mes missions au quotidien
+- Développement (Java/Kotlin, Rust, NodeJS, React...)
+- IT Operations (déploiement d'applications, administration de serveurs...)
+- Expertise cartographique (accompagnement client)
+- Résponsable pôle Recherche et Développement
+
+
+# Après la licence
+
+---
+
+## Après la licence
+
+### Choix de formations
+- Arrêter et travailler
+- Faire un Master (PLS, EID2 ou autre)
+- Faire une école d'ingénieur (Sup Galilée ou autre)
+- Aller en alternance
+
+### Que choisir ?{.alert}
+- Trouver du travail après une licence est compliqué
+- Pensez à vous et ce que vous aimez faire
+- Rengardez bien les enseignements en Master
+- Vérifiez les avis sur le net
+- Les stages en entreprise
+
 
 ---
 
