@@ -82,6 +82,17 @@ build: pandoc -f markdown -st beamer osc.md -o osc.pdf --lua-filter code-filter.
 - Vérifiez les avis sur le net
 - Les stages en entreprise
 
+## Types d'emplois
+
+### Types d'emplois{.example}
+- Emploi en interne (€)
+- Entreprise de services du numérique (ESN, ex SS2I) (€)
+- Portage salarial (€€)
+- Prestataire / Auto entrepreneurs (€€€)
+
+### Rapport au projet
+- Projet unique
+- Changement régulier (2-3 ans)
 
 ---
 
