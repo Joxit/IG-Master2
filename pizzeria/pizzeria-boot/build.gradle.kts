@@ -13,6 +13,7 @@ dependencies {
   implementation(project(":pizzeria-core"))
   implementation(kotlin("stdlib"))
   implementation(kotlin("reflect"))
+  implementation("org.springframework.boot:spring-boot")
   implementation("org.springframework.boot:spring-boot-starter-web")
   implementation("org.springframework.boot:spring-boot-configuration-processor")
   implementation("org.springframework.boot:spring-boot-starter-jdbc")
