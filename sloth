@@ -11,16 +11,16 @@ function run_for_java {
   cd $1
   ./gradlew --no-daemon clean :${1}-core:build :${1}-${2}:build
   cd $DIR
-  docker-compose build ${1}-${2}
-  docker-compose up ${1}-${2}
+  docker compose build ${1}-${2}
+  docker compose up ${1}-${2}
 }
 
 function run_for_vertx {
   cd $1
   ./gradlew --no-daemon clean :${1}-core:build :${1}-${2}:shadowJar
   cd $DIR
-  docker-compose build ${1}-${2}
-  docker-compose up ${1}-${2}
+  docker compose build ${1}-${2}
+  docker compose up ${1}-${2}
 }
 
 if [ "$1" = "pizzeria" ]; then
@@ -32,8 +32,8 @@ if [ "$1" = "pizzeria" ]; then
       run_for_vertx $1 $2
       ;;
     ui)
-      docker-compose build ${1}-${2}
-      docker-compose up ${1}-${2}
+      docker compose build ${1}-${2}
+      docker compose up ${1}-${2}
       ;;
     build)
       cd pizzeria
@@ -44,8 +44,8 @@ if [ "$1" = "pizzeria" ]; then
       cd pizzeria
       ./gradlew --no-daemon clean pizzeria-core:build pizzeria-servlet:build pizzeria-webflux:build pizzeria-boot:build pizzeria-vertx:shadowJar
       cd $DIR
-      docker-compose build pizzeria-servlet pizzeria-webflux pizzeria-boot pizzeria-vertx
-      docker-compose up -d pizzeria-servlet pizzeria-webflux pizzeria-boot pizzeria-vertx nginx pizzeria-ui
+      docker compose build pizzeria-servlet pizzeria-webflux pizzeria-boot pizzeria-vertx
+      docker compose up -d pizzeria-servlet pizzeria-webflux pizzeria-boot pizzeria-vertx nginx pizzeria-ui
       ;;
     *)
       echo Nothing to do for $1 $2

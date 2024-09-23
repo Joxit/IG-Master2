@@ -1,5 +1,3 @@
-version: '3'
-
 networks:
   ig-master2:
     driver: bridge
@@ -29,8 +27,6 @@ services:
       - 127.0.0.10:10000:8080
     networks:
       - ig-master2
-    depends_on:
-      - mysql-db
     logging:
       options:
         max-size: 4m
