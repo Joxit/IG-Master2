@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional
  * @since 2017-11-01
  */
 @Repository
-@Transactional // For lazy loading
+@Transactional // For rollback and exceptions
 class PizzaDAO(
   @PersistenceContext private val em: EntityManager, // From JPA
   @Autowired private val jdbcTemplate: JdbcTemplate

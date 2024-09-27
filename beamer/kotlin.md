@@ -1,8 +1,8 @@
 ---
 title: Introduction à Kotlin
-subtitle: Institut Galilée - Master 2 PLS
+subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 22 Septembre 2023
+date: 27 Septembre 2024 & 11 Octobre 2024
 theme: metropolis
 toc: true
 section-titles: false

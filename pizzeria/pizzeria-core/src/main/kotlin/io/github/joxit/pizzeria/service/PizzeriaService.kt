@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 // For lazy loading
-@Transactional(readOnly = true, propagation = Propagation.REQUIRED)
+@Transactional(readOnly = true) // For rollback and exceptions
 class PizzeriaService(
   @Autowired private val pizzaDAO: PizzaDAO,
   @Autowired private val pizzaSDJDAO: PizzaSDJDAO

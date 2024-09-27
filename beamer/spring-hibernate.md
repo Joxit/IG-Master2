@@ -1,8 +1,8 @@
 ---
 title: Introduction à Spring et Hibernate
-subtitle: Institut Galilée - Master 2 PLS
+subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 22 Septembre 2023
+date: 27 Septembre 2024
 theme: metropolis
 toc: true
 section-titles: false
@@ -299,7 +299,7 @@ Vert.x
 [à montrer-Vert.x-1]: <> (perf: entre vertx et webflux sur empty et temps de démarrage
 Spring Webflux: 13591.05 Requests/sec
 wrk -t 4 -c 50 http://127.0.0.10:10003/pizzas/?type=empty
-Spring Vert.x: 15602.93 Requests/sec
+Spring Vert.x: 17533.91 Requests/sec
 wrk -t 4 -c 50 http://127.0.0.10:10001/pizzas/?type=empty
 )
 [à montrer-Vert.x-2]: <> (Difference entre Netty et Vert.x)
