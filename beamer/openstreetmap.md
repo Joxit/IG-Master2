@@ -1,8 +1,8 @@
 ---
 title: La cartographie avec OpenStreetMap
-subtitle: Institut Galilée - Master 2 PLS
+subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 22 Septembre 2023
+date: 11 Octobre 2024
 theme: metropolis
 toc: true
 section-titles: false
