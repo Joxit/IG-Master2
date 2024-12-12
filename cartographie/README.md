@@ -19,4 +19,14 @@ Jawg Maps est sponsor de l'application StreetComplete depuis 2020 où nos fourni
 
 StreetComplete est un éditeur de données OpenStreetMap facile à utiliser et disponible pour **Android uniquement**. Il peut être utilisé sans aucune connaissance spécifique d'OpenStreetMap. Il pose des questions simples (ou comme des quêtes), avec des réponses directement utilisées pour modifier et améliorer les données OpenStreetMap. L'application est destinée aux utilisateurs qui ne connaissent rien aux schémas de tagging OSM mais qui souhaitent néanmoins contribuer à OpenStreetMap.
 
-Attention, vos contributions devront être correctes et basés sur vos connaissances sur le terrain.
+Votre mission est d'ajouter des informations supplémentaires sur les objets déjà existants. Attention, vos contributions devront être correctes et basés sur vos connaissances sur le terrain. Je favoriserais les contributions qui ont une utilité (nom des rues, adresses des maisons, hauteur des bâtiments, noms et types des commerces/POI, présences de trottoirs...).
+
+### Rapid Editor
+
+Le projet Rapid Editor (ou Map With AI) est une initiative de Meta (Facebook/Instagram...) qui lie l'IA avec la cartographie pour aider les contributeurs à ajouter de la donnée. Ce projet vous aidera à ajouter des bâtiments ou routes qui sont basés sur de l'imagerie satellite. 
+
+Dans les règles de contributions, il est interdit de faire des ajouts de masse par des ordinateurs. C'est pour cela que Meta ne peut pas ajouter directement toute la donnée qu'ils ont généré, elle doit obligatoirement être vérifiée par un humain.
+
+Votre mission est d'ajouter des bâtiments et/ou routes dans des zones du monde. Il vous sera peut-être demandé d'ajouter également des types sur ce que vous allez ajouter. Vous pouvez regarder le wiki OSM pour les [bâtiments](https://wiki.openstreetmap.org/wiki/Key:building) ainsi que pour les [routes](https://wiki.openstreetmap.org/wiki/Key:highway). Vous serez juger sur la précisier de vos ajouts, Rapid Editor ajoute grossièrement les bâtiments, il faudra les rendre moins grossiers.
+
+:bulb: Pour les bâtiments, vous pouvez utiliser Q pour le rendre orthogonal.
