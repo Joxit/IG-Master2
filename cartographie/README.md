@@ -23,10 +23,18 @@ Votre mission est d'ajouter des informations supplémentaires sur les objets dé
 
 ### Rapid Editor
 
-Le projet Rapid Editor (ou Map With AI) est une initiative de Meta (Facebook/Instagram...) qui lie l'IA avec la cartographie pour aider les contributeurs à ajouter de la donnée. Ce projet vous aidera à ajouter des bâtiments ou routes qui sont basés sur de l'imagerie satellite. 
+Le projet [Rapid Editor](https://rapideditor.org/) (ou Map With AI) est une initiative de Meta (Facebook/Instagram...) qui lie l'IA avec la cartographie pour aider les contributeurs à ajouter de la donnée. Ce projet vous aidera à ajouter des bâtiments ou routes qui sont basés sur de l'imagerie satellite. 
 
 Dans les règles de contributions, il est interdit de faire des ajouts de masse par des ordinateurs. C'est pour cela que Meta ne peut pas ajouter directement toute la donnée qu'ils ont généré, elle doit obligatoirement être vérifiée par un humain.
 
-Votre mission est d'ajouter des bâtiments et/ou routes dans des zones du monde. Il vous sera peut-être demandé d'ajouter également des types sur ce que vous allez ajouter. Vous pouvez regarder le wiki OSM pour les [bâtiments](https://wiki.openstreetmap.org/wiki/Key:building) ainsi que pour les [routes](https://wiki.openstreetmap.org/wiki/Key:highway). Vous serez juger sur la précisier de vos ajouts, Rapid Editor ajoute grossièrement les bâtiments, il faudra les rendre moins grossiers.
+Votre mission est d'ajouter des bâtiments et/ou routes dans des zones du monde. Il vous sera peut-être demandé d'ajouter également des types sur ce que vous allez ajouter. Vous pouvez regarder le wiki OSM pour les [bâtiments](https://wiki.openstreetmap.org/wiki/Key:building) ainsi que pour les [routes](https://wiki.openstreetmap.org/wiki/Key:highway). Vous serez juger sur la précisier de vos ajouts, [Rapid Editor](https://rapideditor.org/) ajoute grossièrement les bâtiments, il faudra les rendre moins grossiers.
+
+:bulb: Pour les bâtiments, vous pouvez utiliser Q pour le rendre orthogonal.
+
+### OSM iD Editor
+
+L'editeur iD est l'éditeur par défaut de OSM, c'est celui que vous avez quand vous allez sur [osm.org](https://www.openstreetmap.org/) et cliquez sur modifier. Avec cet éditeur vous avez la possibilité de tout faire, c'est l'un des plus complets et simple d'utilisation.
+
+Votre mission est d'ajouter ce qui n'est pas possible de faire avec les autres projets. Attention, vos contributions devront être correctes et basés sur vos connaissances sur le terrain. Restez sur des objets à taille humaine, noms/tags des points d'intérêts, bâtiments, routes... Placer de façon précise les [adresses](https://wiki.openstreetmap.org/wiki/Addresses) (nous les plaçons au niveau de la porte d'entrée).
 
 :bulb: Pour les bâtiments, vous pouvez utiliser Q pour le rendre orthogonal.
