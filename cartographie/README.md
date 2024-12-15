@@ -4,6 +4,28 @@ Si vous êtes ici, c'est parce que vous avez choisi l'option Cartographie et Ope
 
 À l'issue de ce cours, vous aurez produit un projet et/ou aurez participé au monde d'OpenStreetMap. Chaque éléments que vous rendrez, sera pris en compte dans votre note finale.
 
+## Restrictions frontend
+
+- Vos interfaces peuvent être faites en utilisant [React](https://fr.react.dev/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [Android](https://developer.android.com/) ou [React Natvie](https://reactnative.dev/) (=> Pas de iOS ou Angular).
+- Plusieurs frameworks peuvent se mettre au dessus comme [Next.js](https://nextjs.org/) et [Remix](https://remix.run/) au dessus de React, [Nuxt.js](https://nuxt.com/) au dessus de Vue.js...
+- Pour le fond de carte vous avez le choix entre [JawgMaps](https://jawg.io/) et [OpenStreetMap](https://www.openstreetmap.org/).
+- Pour l'affichage des cartes voyez [MapLibre GL](https://maplibre.org/) et [Leaflet](https://leafletjs.com/)
+  - N'hésitez pas à regarder les plugins existants pour accélerer vos developpements
+  - Il y a des intégrations pour React, Vue.js etc
+- Besoin de faire des calculs geospatials ? Allez voir [Turf.js](https://turfjs.org/)
+
+Vous voulez utiliser autre chose ? Demandez mon avis ;)
+
+## Restrictions backend
+
+- Les langages autorisés sont JVM (Java et Kotlin), NdeJS (Javascript et TypeScript) et Rust (pour le fun)
+- Idée de frameworks pour les applications web:
+  - JVM:[Spring Boot](https://spring.io/projects/spring-boot), [Vert.x](https://vertx.io/), [Quarkus](https://quarkus.io/) ou [Micronaut](https://micronaut.io/)
+  - NodeJS: [Express.js](https://expressjs.com/), [Nest.js](https://nestjs.com/), [Koa](https://koajs.com/), [fastify](https://fastify.dev/)...
+- Bases de données: [PostgreSQL](https://www.postgresql.org/) avec [Postgis](https://postgis.net/) ou [Elasticsearch](https://www.elastic.co/fr/elasticsearch)
+
+Vous voulez utiliser autre chose ? Demandez mon avis ;)
+
 ## Contribution à OpenStreetMap
 
 Notation: 5pts max.
