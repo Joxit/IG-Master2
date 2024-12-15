@@ -6,6 +6,8 @@ Si vous êtes ici, c'est parce que vous avez choisi l'option Cartographie et Ope
 
 ## Contribution à OpenStreetMap
 
+Notation: 5pts max.
+
 Avant de commencer vos contributions, créez une compte sur [osm.org](https://www.openstreetmap.org/) avec votre mail personel.
 Si vous faites des contributions, vous devrez me communiquer votre pseudo pour que je puisse vous noter après la dernière séance.
 
@@ -23,7 +25,7 @@ Votre mission est d'ajouter des informations supplémentaires sur les objets dé
 
 ### Rapid Editor
 
-Le projet [Rapid Editor](https://rapideditor.org/) (ou Map With AI) est une initiative de Meta (Facebook/Instagram...) qui lie l'IA avec la cartographie pour aider les contributeurs à ajouter de la donnée. Ce projet vous aidera à ajouter des bâtiments ou routes qui sont basés sur de l'imagerie satellite. 
+Le projet [Rapid Editor](https://rapideditor.org/) (ou Map With AI) est une initiative de Meta (Facebook/Instagram...) qui lie l'IA avec la cartographie pour aider les contributeurs à ajouter de la donnée. Ce projet vous aidera à ajouter des bâtiments ou routes qui sont basés sur de l'imagerie satellite.
 
 Dans les règles de contributions, il est interdit de faire des ajouts de masse par des ordinateurs. C'est pour cela que Meta ne peut pas ajouter directement toute la donnée qu'ils ont généré, elle doit obligatoirement être vérifiée par un humain.
 
@@ -38,3 +40,40 @@ L'editeur iD est l'éditeur par défaut de OSM, c'est celui que vous avez quand 
 Votre mission est d'ajouter ce qui n'est pas possible de faire avec les autres projets. Attention, vos contributions devront être correctes et basés sur vos connaissances sur le terrain. Restez sur des objets à taille humaine, noms/tags des points d'intérêts, bâtiments, routes... Placer de façon précise les [adresses](https://wiki.openstreetmap.org/wiki/Addresses) (nous les plaçons au niveau de la porte d'entrée).
 
 :bulb: Pour les bâtiments, vous pouvez utiliser Q pour le rendre orthogonal.
+
+## Projet: Chasse au trésor
+
+Vous aurez la mission de faire une chasse au trésor en utilisant bien évidemment une carte, vous pouvez au choix faire que le front ou le backend ou les deux.
+
+Sujet: Vous êtes les assistants du célèbre Indiana Jones qui est à la recherche de l'arche perdue. Il n'a pas la position exacte de l'arche, mais il peut se reposer sur une carte interactive et des énigmes pour espérer atteindre l'arche perdue. Les règles globales sont:
+
+- Il ne peut voir qu'ne seule énigme à la fois
+- Il doit répondre correctement à l'énigme pour voir la suivante
+- La réponse de l'énigme est un emplacement sur la carte
+
+Ce projet peut se faire seul ou en binôme.
+:warning: la notation est répartie pour chacun d'entre vous (i.e. si vous avez 12 points, ça peut très bien être 6 chacun ou 7 pour le premier et 3 pour le second). Étant donnée que le front est back sont indépendants, un membre du binoôme peut très bien avoir 100% des points front et l'autre 100% des points back.
+
+### La partie frontend de la chasse au trésor
+
+Notation: 12pts max.
+
+Voici une liste non exaustive d'idées que vous pouvez implémenter:
+
+- Une page web ou application contenant une carte et un emplacement pour l'énigme en cours
+  - L'énigme peut être sur la carte (composant flottant) ou à l'exterieur
+  - Vous pouvez afficher la liste des énigmes réussies
+    - Les énigmes réussies devront être visuellement marquées
+    - Dans le cas d'une composant flottant, pour voir les anciennes énigmes il faudra utiliser des boutons précédent et suivant
+- L'utilisateur doit se déplacer sur la carte pour trouver l'emplacement de l'énigme
+  - Le point doit donc être caché jusqu'à un certain moment avant d'être révélé, vous avez 2 choix:
+    - Vous pouvez vous baser sur le niveau de zoom de l'utilisateur pour décider si le point doit être visible ou pas
+      - Arrivé au zoom où la solution peut être visible, vous pouvez afficher un bouton pour indiquer une distance approximative
+    - Vous pouvez demander à l'utilisateur de cliquer sur la carte
+      - Au click, un POI temporaire sera affiché pour montrer le choix de l'utilisateur
+      - Le POI peut être déplacé (drag and drop) ou supprimé (click dessus) ou écrasé (click sur une autre zone)
+      - L'utilisateur aura un bouton pour valider son choix
+      - Si le POI est proche de la solution (x km), l'énigme est réussie
+      - Si le POI est trop loin de la solution, indiquez une distance approximative
+- Après chaque enigme réussie, vous pouvez relier les résultats entre eux (en faisant une ligne droite ou un [grand cercle](https://fr.wikipedia.org/wiki/Grand_cercle))
+- Arrivé à l'arche perdue, une célébration doit être faite (idées: un message, une image, une animation...)
