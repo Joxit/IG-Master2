@@ -23,6 +23,10 @@ Vous voulez utiliser autre chose ? Demandez mon avis ;)
   - JVM:[Spring Boot](https://spring.io/projects/spring-boot), [Vert.x](https://vertx.io/), [Quarkus](https://quarkus.io/) ou [Micronaut](https://micronaut.io/)
   - NodeJS: [Express.js](https://expressjs.com/), [Nest.js](https://nestjs.com/), [Koa](https://koajs.com/), [fastify](https://fastify.dev/)...
 - Bases de données: [PostgreSQL](https://www.postgresql.org/) avec [Postgis](https://postgis.net/) ou [Elasticsearch](https://www.elastic.co/fr/elasticsearch)
+- Besoin de faire des calculs geospatials ? 
+  - Directement en base avec [Postgis](https://postgis.net/)
+  - Pour JVM avec [JTS](https://github.com/locationtech/jts), [Spatial4J](https://github.com/locationtech/spatial4j) ou [Geotools](https://github.com/geotools/geotools)
+  - Pour NodeJS avec [Turf.js](https://turfjs.org/)
 
 Vous voulez utiliser autre chose ? Demandez mon avis ;)
 
@@ -99,3 +103,52 @@ Voici une liste non exaustive d'idées que vous pouvez implémenter:
       - Si le POI est trop loin de la solution, indiquez une distance approximative
 - Après chaque enigme réussie, vous pouvez relier les résultats entre eux (en faisant une ligne droite ou un [grand cercle](https://fr.wikipedia.org/wiki/Grand_cercle))
 - Arrivé à l'arche perdue, une célébration doit être faite (idées: un message, une image, une animation...)
+- Avoir une page pour afficher toutes les actions effectuées par l'utilisateur
+
+Dans le cas où vous faîtes sans backend:
+
+- Vous pouvez garder toutes les énigmes et résultats dans un fichier json
+- Enregistrez l'avancement de votre utilisateur dans le local storage
+
+Dans le cas où vous faîtes backend + frontend:
+
+- Votre frontend ne doit pas connaître les énigmes ni les emplacements des points
+  - Le backend envoie uniquement l'énigme
+  - Le frontend fait des requêtes avec la bbox de la carte / le point central de la carte / le point choisi par l'utilisateur pour savoir si l'énigme est résolue.
+  - C'est uniquement quand l'énigme est résolue que le backend renvoie le point résultant
+- Vous devez avoir un minimum de gestion d'erreur entre votre backend et frontend
+
+### La partie backend de la chasse au trésor
+
+Notation: 8pts max.
+
+Voici une liste non exaustive d'idées que vous pouvez implémenter:
+
+- Une API REST/JSON pour gérer votre chasse au trésor
+- Utiliser une base de donnée qui permet d'effectuer des calculs géospatiaux (comme Postgis)
+- Les énigmes, points et résultats doivent être enregistrés dans la BDD
+  - L'énigme uniquement est communiqué au front, pas le résultat
+  - Vous gérez l'état d'avancement de la chasse au trésor
+  - À la première requête:
+    - Vous générez la session si elle n'est pas présente
+    - Dans le cas contraire vous envoyez la liste des points des énigmes réussies
+  - À la dernière requête vous pouvez renvoyer la liste de tous les points en même temps que le lieu du trésor
+- Avoir une validation sur les entrées faites par le front
+  - Un format doit être défini (status code + message + code d'erreur)
+- Avoir une gestion des accès à votre API via un [access-token](https://fr.wikipedia.org/wiki/Jeton_d%27acc%C3%A8s)
+- Être capable de reprendre la partie d'un joueur à l'aide d'une session persistante
+  - Cela peut-être un cookie
+  - Cela peut-être une valeur générée, renvoyé au front et présent dans tous les échanges
+- Sauvegarder l'historique des actions de votre utilisateur
+  - Il devra y avoir un historique par étape => L'énigme 1 a trois actions, l'énigme 2 à 4 actions etc
+- Pouvoir supprimer un historique d'actions
+- Avoir une documentation de votre API pour la correction
+  - Elle peut-être dans le README.md de votre projet
+  - Il faut pour chaque endpoint: `method`, `uri`, `query-params`, `data` (JSON décrit), `return` (JSON décrit)
+
+Dans le cas où vous le faites sans frontend:
+
+- Plusieurs scripts bash qui simulent les interactions de l'utilisateur et affiche les method + uri + input + output
+  - Un script du cas nominal où tout se passe bien du premier coup
+  - Un script avec des actions loupées
+  - Un script pour montrer l'historique d'un joueur
