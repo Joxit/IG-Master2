@@ -82,7 +82,7 @@ Ce projet peut se faire seul ou en binôme.
 
 ### La partie frontend de la chasse au trésor
 
-Notation: 12pts max.
+Notation: 8pts max.
 
 Voici une liste non exaustive d'idées que vous pouvez implémenter:
 
@@ -152,3 +152,38 @@ Dans le cas où vous le faites sans frontend:
   - Un script du cas nominal où tout se passe bien du premier coup
   - Un script avec des actions loupées
   - Un script pour montrer l'historique d'un joueur
+
+## Projet: Voyage et partages
+
+Ce projet a pour but de créer une carte representant un carnet de voyage comprenant des points d'intérêts (musées, points de vues...), des photos et les tracés piétons/voiture entre les points.
+
+### La partie frontend du voyage et partages
+
+Notation: 8pts max.
+
+Voici une liste non exaustive d'idées que vous pouvez implémenter:
+
+- Une page web ou application mobile contenant une carte avec dessus
+  - Des markers à des emplacements importants (musées, points de vues, hôtel, aéroport...)
+    - Ils doivent être intéractifs, au clic une popup doit apparaître pour visualiser le lieu avec une ou des photos
+    - Le nom du lieu doit être visible sans cliquer dessus
+  - Le tracé piéton ou voiture entre chaque markers (en fonction des distances)
+    - Vous devez mettre en évidence le temps de transports par mode pour le jour
+    - Une différence visuelle doit être faite entre un tracé piéton et voiture
+    - Essayez de ne pas dépasser 25km par jours
+  - Un paneau de navigation pour aller sur différents jours
+    - Vous devez avoir une flèche pour aller au jour d'avant ou d'après
+    - Vous devez avoir un raccourcis pour aller sur le premier jour et dernier jour
+- Pour la navigation, vous devez utiliser une API spécialisée (vous serez jugés sur votre choix du fournisseur)
+- Les photos ne devront pas être directement dans votre projet, ça devra être des liens vers des services externes stockés (unsplash, instagram...)
+  - Si vous faîte le choix du Server Side Rendering, elles pourront être téléchargées au run
+- Vous devez être capable de mettre en évidence plusieurs voyages
+- Il doit y avoir les heures d'arrivé et de départ sur les lieux
+  - Il faut prendre en compte le transport et le temps passé sur place
+- Vous pouvez ajouter une recherche par forward geocoding (vous serez jugés sur votre choix du fournisseur)
+  - Vous pouvez également y mettre du reverse geocoding quand l'utilisateur appuie sur une touche en même temps que cliquer
+
+Dans le cas où vous faîtes sans backend:
+
+- Tous vos points et configurations peuvent être dans un fichier json
+  - Ça doit être au minimum un fichier json par voyage
