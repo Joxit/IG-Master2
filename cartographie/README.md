@@ -27,6 +27,7 @@ Vous voulez utiliser autre chose ? Demandez mon avis ;)
   - Directement en base avec [Postgis](https://postgis.net/)
   - Pour JVM avec [JTS](https://github.com/locationtech/jts), [Spatial4J](https://github.com/locationtech/spatial4j) ou [Geotools](https://github.com/geotools/geotools)
   - Pour NodeJS avec [Turf.js](https://turfjs.org/)
+- Vous devez créer des APIs REST, vous serez libre pour le nommage mais également jugé sur celui-ci
 
 Vous voulez utiliser autre chose ? Demandez mon avis ;)
 
@@ -187,3 +188,30 @@ Dans le cas où vous faîtes sans backend:
 
 - Tous vos points et configurations peuvent être dans un fichier json
   - Ça doit être au minimum un fichier json par voyage
+
+### La partie backend du voyage et partages
+
+Notation: 6pts max.
+
+Voici une liste non exaustive d'idées que vous pouvez implémenter:
+
+- Une API REST/JSON pour gérer les voyages partagés
+  - Votre API doit renvoyer un jour par un jour et non pas le voyage en entier
+- Utiliser une base de donnée qui permet d'effectuer des calculs géospatiaux (comme Postgis)
+- Les positions et informations doivent être enregestrés dans la BDD
+  - Les url des photos seront enregistrées en BDD également
+    - Vous avez le choix entre renvoyer l'URL simplement ou faire un proxy via votre API (votre API télécharge l'image et la met en cache)
+- Avoir une validation sur les entrées faites par le front
+  - Un format doit être défini (status code + message + code d'erreur)
+- Avoir une gestion des accès à votre API via un [access-token](https://fr.wikipedia.org/wiki/Jeton_d%27acc%C3%A8s)
+- Avoir une documentation de votre API pour la correction
+  - Elle peut-être dans le README.md de votre projet
+  - Il faut pour chaque endpoint: `method`, `uri`, `query-params`, `data` (JSON décrit), `return` (JSON décrit)
+
+Dans le cas où vous le faites sans frontend:
+- Vous devez avoir un endpoint pour calculer la navigation piéton/voiture
+  - Vous devez utiliser une API spécialisée (vous serez jugés sur votre choix du fournisseur)
+- Plusieurs scripts bash qui simulent les interactions de l'utilisateur et affiche les method + uri + input + output
+  - Un script du cas nominal où vous selectionnez un voyage
+  - Un script avec des actions loupées
+  - Un script pour montrer l'historique d'un joueur
