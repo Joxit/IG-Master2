@@ -7,6 +7,13 @@ fi
 
 DIR=$(pwd)
 
+if [ -z "$1" ]; then
+  echo "Usage:"
+  echo "       $0 pizzeria [boot|core|servlet|webflux|vertx|ui|build|all]"
+  echo "       $0 [spring|osm|kotlin|osc|docker] pdf"
+  exit 0
+fi
+
 function run_for_java {
   cd $1
   ./gradlew --no-daemon clean :${1}-core:build :${1}-${2}:build
@@ -68,6 +75,10 @@ if [ "$2" = "pdf" ]; then
     osc)
     pdf_basename="osc"
     opts=""
+    ;;
+    docker)
+    pdf_basename="docker"
+    opts="-B aboutme.tex"
     ;;
   esac
   if [ -n "$pdf_basename" ]; then
