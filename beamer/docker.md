@@ -23,9 +23,7 @@ header-includes: |
 
 ## Docker
 
-> Docker est un outil qui peut empaqueter une application et ses dépendances dans un container isolé, qui pourra être exécuté sur n'importe quel serveur
-
-- 451 Research
+> Docker est un outil qui peut empaqueter une application et ses dépendances dans un container isolé, qui pourra être exécuté sur n'importe quel serveur - 451 Research
 
 # Histoire de Docker
 

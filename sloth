@@ -80,6 +80,10 @@ if [ "$2" = "pdf" ]; then
     pdf_basename="docker"
     opts="-B aboutme.tex"
     ;;
+    api|rest|api-rest)
+    pdf_basename="api-rest"
+    opts="-B aboutme.tex"
+    ;;
   esac
   if [ -n "$pdf_basename" ]; then
     dirname="$(echo $(dirname $0)/beamer | sed 's,//,/,g')"
