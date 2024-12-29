@@ -215,3 +215,22 @@ Dans le cas où vous le faites sans frontend:
   - Un script du cas nominal où vous selectionnez un voyage
   - Un script avec des actions loupées
   - Un script pour montrer l'historique d'un joueur
+
+## Projet: Une carte à mon goût
+
+Ce projet a pour but de créer une carte avec de la donnée open data venant exclusivement de OSM.
+
+### La partie frontend d'une carte à mon goût
+
+Notation: 6pts max.
+
+Voici une liste non exaustive d'idées que vous pouvez implémenter:
+
+- Une page web ou une application mobile contenant une carte avec dessus
+  - Des markers avec la donnée que vous souhaitez mettre en valeur (restaurants, fontaines à eau, bancs, toilettes publiques...)
+  - Les markers peuvent être différents en fonction de la donnée ou si vous en mettez plusieurs
+- Vous devez ajouter des interactions sur les marker
+  - Au click ouvrez une popup et affichez des informations tirés de la donnée OSM
+  - Vous pouvez faire quelque chose au survol du marker également
+- Amusez vous à créer une carte sur mesure si c'est mieux pour le thème que vous avez choisi
+- Pour récupérer la donnée vous pouvez utiliser l'[API Overpass](https://overpass-turbo.eu/)
