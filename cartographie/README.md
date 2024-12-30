@@ -234,3 +234,17 @@ Voici une liste non exaustive d'idées que vous pouvez implémenter:
   - Vous pouvez faire quelque chose au survol du marker également
 - Amusez vous à créer une carte sur mesure si c'est mieux pour le thème que vous avez choisi
 - Pour récupérer la donnée vous pouvez utiliser l'[API Overpass](https://overpass-turbo.eu/)
+
+### La partie backend d'une carte à ton goût
+
+Notation: 3pts max.
+
+Voici une liste non exaustive d'idées que vous pouvez implémenter:
+
+- Une API REST/JSON pour gérer les données que vous voulez afficher
+- Votre API doit récupérer la donnée de l'[API Overpass](https://overpass-turbo.eu/) et la stocker dans une BDD
+  - C'est à faire une fois à la création des tables
+  - Vous pouvez faire un endpoint pour mettre à jour
+- Votre API doit stocker les donnée que votre front devra afficher
+  - Vous pouvez formater la donnée pour faciliter la communication
+  - Vous pouvez intégrer certaines meta data supplémentaires, comme le type de marker pour découpler le front
