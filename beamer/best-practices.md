@@ -13,13 +13,30 @@ header-includes: |
   \hideFromPandoc{ \let\Begin\begin \let\End\end }
   \metroset{block=fill}
   \newcommand{\sectionimage}{Foo}
-  \newcommand{\imagedirectory}{docker-images}
+  \newcommand{\imagedirectory}{best-practices-images}
   \usepackage{dirtytalk}
 ---
 
-# Conventional Commits
 
----
+# Semantic Versioning
+
+## Semantic Versioning
+
+### Qu'est-ce que c'est ?
+
+C'est un schéma de version constitué de trois parties numériques `Major.Minor.Patch`, exemple `1.0.2`.
+
+On peut y apposer une balise de pré-version facultative et une balise méta de construction facultative, exemple `2.4.1-beta`.
+
+## Semantic Versioning: Règles
+
+### Comment ça fonctionne ?{.example}
+
+- Quand une release contient **des modifications radicales** (non retrocompatibles), on augmente la Major.
+- Quand une release contient **des fonctionnalités**, on augmente la Minor.
+- Quand une release contient **que des corrections**, on augment on augmente le Patch. 
+
+# Conventional Commits
 
 ## Conventional Commits
 
