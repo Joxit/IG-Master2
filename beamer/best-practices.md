@@ -17,7 +17,6 @@ header-includes: |
   \usepackage{dirtytalk}
 ---
 
-
 # Semantic Versioning
 
 ## Semantic Versioning
@@ -34,7 +33,7 @@ On peut y apposer une balise de pré-version facultative et une balise méta de 
 
 - Quand une release contient **des modifications radicales** (non retrocompatibles), on augmente la Major.
 - Quand une release contient **des fonctionnalités**, on augmente la Minor.
-- Quand une release contient **que des corrections**, on augment on augmente le Patch. 
+- Quand une release contient **que des corrections**, on augment on augmente le Patch.
 
 # Conventional Commits
 
@@ -87,3 +86,38 @@ BREAKING CHANGE: the new endpoint uses GeoJSON
 > Spécifications complètes disponible sur le site
 >
 > [conventionalcommits.org](https://www.conventionalcommits.org/)
+
+# Code Formatting
+
+## Code Formatting
+
+### Qu'est-ce que c'est ?
+
+C'est un ensemble de règles ou de lignes directrices utilisées lors de l'écriture du code source d'un programme informatique.
+
+Généralement on utilise des outils pour formatter le code automatiquement en respectant ces règles.
+
+## Code Formatting: Règles
+
+### Éléments à configurer
+
+- Indentation: tabulations vs 4 espaces vs 2 espaces
+- Les sauts de lignes après ou avant les accolades `{`
+- Les espaces autours des caractères spéciaux (accolades `{}`, parenthèses `()`, etc.)
+- Longueur des lignes: 80 charactères vs 100 charactères vs 120 charactères
+
+## Code Formatting: Comment formater ?
+
+### Outils disponibles
+
+- Prettier:
+  - Supporte: `JavaScript`, `TypeScript`, `JSX`, `JSON`, `CSS`, `HTML`...
+  - Disponible en plugin pour: VSCode, Atom, WebStorm, CLI (node)...
+- IDE (IntelliJ, Eclipse...):
+  - Configuration par langage en local à la main
+  - Configuration par le support de [EditorConfig](https://editorconfig.org/) ou similaire pour le projet
+
+## Code Formatting: Bonnes pratiques{.standout}
+
+\centering\Large
+Faut-il personnaliser le style ?
