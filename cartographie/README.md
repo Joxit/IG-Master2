@@ -4,6 +4,8 @@ Si vous êtes ici, c'est parce que vous avez choisi l'option Cartographie et Ope
 
 À l'issue de ce cours, vous aurez produit un projet et/ou aurez participé au monde d'OpenStreetMap. Chaque élément que vous rendrez, sera pris en compte dans votre note finale.
 
+Les supports de cours: [best-practices](https://joxit.dev/IG-Master2/beamer/best-practices.pdf), [docker](https://joxit.dev/IG-Master2/beamer/docker.pdf), [api-rest](https://joxit.dev/IG-Master2/beamer/api-rest.pdf)
+
 ## Restrictions frontend
 
 - Vos interfaces peuvent être faites en utilisant [React](https://fr.react.dev/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [Android](https://developer.android.com/) ou [React Natvie](https://reactnative.dev/) (=> Pas de iOS ou Angular).
@@ -23,7 +25,7 @@ Vous voulez utiliser autre chose ? Demandez mon avis ;)
   - JVM:[Spring Boot](https://spring.io/projects/spring-boot), [Vert.x](https://vertx.io/), [Quarkus](https://quarkus.io/) ou [Micronaut](https://micronaut.io/)
   - NodeJS: [Express.js](https://expressjs.com/), [Nest.js](https://nestjs.com/), [Koa](https://koajs.com/), [fastify](https://fastify.dev/)...
 - Bases de données: [PostgreSQL](https://www.postgresql.org/) avec [Postgis](https://postgis.net/) ou [Elasticsearch](https://www.elastic.co/fr/elasticsearch)
-- Besoin de faire des calculs géospatiaux ? 
+- Besoin de faire des calculs géospatiaux ?
   - Directement en base avec [Postgis](https://postgis.net/)
   - Pour JVM avec [JTS](https://github.com/locationtech/jts), [Spatial4J](https://github.com/locationtech/spatial4j) ou [Geotools](https://github.com/geotools/geotools)
   - Pour NodeJS avec [Turf.js](https://turfjs.org/)
@@ -33,7 +35,7 @@ Vous voulez utiliser autre chose ? Demandez mon avis ;)
 
 ## Contribution à OpenStreetMap
 
-Notation: 5pts max.
+Complexité: 5.
 
 Avant de commencer vos contributions, créez un compte sur [osm.org](https://www.openstreetmap.org/) avec votre mail personnel.
 Si vous faites des contributions, vous devrez me communiquer votre pseudo pour que je puisse vous noter après la dernière séance.
@@ -83,7 +85,7 @@ Ce projet peut se faire seul ou en binôme.
 
 ### La partie frontend de la chasse au trésor
 
-Notation: 8pts max.
+Complexité: 8.
 
 Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 
@@ -121,7 +123,7 @@ Dans le cas où vous faîtes backend + frontend:
 
 ### La partie backend de la chasse au trésor
 
-Notation: 8pts max.
+Complexité: 8.
 
 Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 
@@ -160,7 +162,7 @@ Ce projet a pour but de créer une carte représentant un carnet de voyage compr
 
 ### La partie frontend du voyage et partages
 
-Notation: 8pts max.
+Complexité: 8.
 
 Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 
@@ -191,7 +193,7 @@ Dans le cas où vous faîtes sans backend:
 
 ### La partie backend du voyage et partages
 
-Notation: 6pts max.
+Complexité: 6.
 
 Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 
@@ -209,6 +211,7 @@ Voici une liste non exhaustive d'idées que vous pouvez implémenter:
   - Il faut pour chaque endpoint: `method`, `uri`, `query-params`, `data` (JSON décrit), `return` (JSON décrit)
 
 Dans le cas où vous le faites sans frontend:
+
 - Vous devez avoir un endpoint pour calculer la navigation piéton/voiture
   - Vous devez utiliser une API spécialisée (vous serez jugés sur votre choix du fournisseur)
 - Plusieurs scripts bash qui simulent les interactions de l'utilisateur et qui affiche les méthodes + uri + input + output
@@ -222,7 +225,7 @@ Ce projet a pour but de créer une carte avec de la donnée open data venant exc
 
 ### La partie frontend d'une carte à mon goût
 
-Notation: 6pts max.
+Complexité: 6.
 
 Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 
@@ -237,7 +240,7 @@ Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 
 ### La partie backend d'une carte à ton goût
 
-Notation: 3pts max.
+Complexité: 2.
 
 Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 

@@ -23,17 +23,17 @@ header-includes: |
 
 ### Qu'est-ce que c'est ?
 
-C'est un schéma de version constitué de trois parties numériques `Major.Minor.Patch`, exemple `1.0.2`.
+C'est un schéma de version constitué de trois parties numériques `Major.Minor.Patch`, par exemple `1.0.2`.
 
-On peut y apposer une balise de pré-version facultative et une balise méta de construction facultative, exemple `2.4.1-beta`.
+On peut y apposer une balise de pré-version facultative et une balise méta de construction facultative, par exemple `2.4.1-beta`.
 
 ## Semantic Versioning: Règles
 
 ### Comment ça fonctionne ?{.example}
 
-- Quand une release contient **des modifications radicales** (non retrocompatibles), on augmente la Major.
+- Quand une release contient **des modifications radicales** (non rétrocompatibles), on augmente la Major.
 - Quand une release contient **des fonctionnalités**, on augmente la Minor.
-- Quand une release contient **que des corrections**, on augment on augmente le Patch.
+- Quand une release ne contient **que des corrections**, on augmente le Patch.
 
 # Conventional Commits
 
@@ -83,7 +83,7 @@ BREAKING CHANGE: the new endpoint uses GeoJSON
 
 \centering\Large
 
-> Spécifications complètes disponible sur le site
+> Spécifications complètes disponibles sur le site
 >
 > [conventionalcommits.org](https://www.conventionalcommits.org/)
 
@@ -95,7 +95,7 @@ BREAKING CHANGE: the new endpoint uses GeoJSON
 
 C'est un ensemble de règles ou de lignes directrices utilisées lors de l'écriture du code source d'un programme informatique.
 
-Généralement on utilise des outils pour formatter le code automatiquement en respectant ces règles.
+Généralement, on utilise des outils pour formater le code automatiquement en respectant ces règles.
 
 ## Code Formatting: Règles
 
@@ -103,8 +103,8 @@ Généralement on utilise des outils pour formatter le code automatiquement en r
 
 - Indentation: tabulations vs 4 espaces vs 2 espaces
 - Les sauts de lignes après ou avant les accolades `{`
-- Les espaces autours des caractères spéciaux (accolades `{}`, parenthèses `()`, etc.)
-- Longueur des lignes: 80 charactères vs 100 charactères vs 120 charactères
+- Les espaces autour des caractères spéciaux (accolades `{}`, parenthèses `()`, etc.)
+- Longueur des lignes: 80 caractères vs 100 caractères vs 120 caractères
 
 ## Code Formatting: Comment formater ?
 
@@ -121,3 +121,53 @@ Généralement on utilise des outils pour formatter le code automatiquement en r
 
 \centering\Large
 Faut-il personnaliser le style ?
+
+# Git Workflows
+
+## Git Workflows
+
+### Qu'est-ce que c'est ?
+
+- Il existe plusieurs manières de gérer sa façon de travailler en équipe avec Git.
+- On se base généralement sur une que nous devons par la suite suivre tout au long du projet.
+- Elles ont toutes leurs avantages et inconvénients, mais ils dépendendent régulièrement des tailles des équipes ou du projet.
+
+## Git Workflows: Git Flow
+
+![](./best-practices-images/git-flow.png)
+
+## Git Workflows: GitHub Flow
+
+![](./best-practices-images/github-flow.png)
+
+## Git Workflows: GitLab Flow
+
+![](./best-practices-images/gitlab-flow.png)
+
+## Git Workflows: Trunk based Flow
+
+![](./best-practices-images/trunk-based-flow.png)
+
+## Git Workflows: One Flow
+
+\begin{center}
+\begin{minipage}{0.4\textwidth}
+\centering \includegraphics[keepaspectratio]{./best-practices-images/oneflow-1.png}
+One Flow 1
+\end{minipage}~
+\begin{minipage}{0.4\textwidth}
+\centering \includegraphics[keepaspectratio]{./best-practices-images/oneflow-2.png}
+One Flow 2
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\centering \includegraphics[keepaspectratio]{./best-practices-images/oneflow-3.png}
+One Flow 3
+\end{minipage}
+\end{center}
+
+## Git Workflows
+
+### Nommage et points communs
+
+- Nommez vos branche de feature/fix correctement (ex. `feat/joxit/add-map` ou `fix/firefox-v156`)
+- Chque point de fusion des graphes sont soit des merges (branche visible), soit des squash (un seul commit)

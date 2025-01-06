@@ -51,7 +51,7 @@ header-includes: |
 
 ### Définitions
 
-- Infrastructure = ordintauer / serveur
+- Infrastructure = ordinateur / serveur
 - Hypervisor: s'exécute soit sur l'infrastructure (type 1), soit via un logiciel dans un OS (type 2)
   - Type 1: KVM, Microsoft Hyper-V et VMware vSphere
   - Type 2: VMware Workstation et Oracle VirtualBox
@@ -61,8 +61,8 @@ header-includes: |
 ### Container{.example}
 
 - Un container est léger:
-  - Un seul OS sur l'infrastructure, les containeurs partagent le même kernel
-  - Necessite moins de ressources (RAM, CPU, Disk)
+  - Un seul OS sur l'infrastructure, les containers partagent le même kernel
+  - Nécessite moins de ressources (RAM, CPU, Disk)
 - Sécurisé, isolation des app par défaut (communication possible)
 - Installation simple, tout est géré par Docker
 - Un standard qui peut être implémenté par d'autres
@@ -73,8 +73,8 @@ header-includes: |
 ### Cas d'utilisation
 
 - Des équipes de Dev/DevOPS pour leur application
-- Déployement sur des orchestrateurs (Kubernetes, Nomad, Rancher...)
-- Disposer plusieurs containeurs sur la même infrastructure ou dans des VM (Cloud)
+- Déploiement sur des orchestrateurs (Kubernetes, Nomad, Rancher...)
+- Disposer de plusieurs containers sur la même infrastructure ou dans des VM (Cloud)
 
 ## Container vs Virtual Machine
 
@@ -82,7 +82,7 @@ header-includes: |
 
 - Une VM a un OS complet:
   - Plusieurs OS incompatibles peuvent aller sur la même infrastructure
-  - Necessite plus de ressources (RAM, CPU, Disk)
+  - Nécessite plus de ressources (RAM, CPU, Disk)
 - Sécurisé, une VM est virtuellement une machine
 - Pas de standard, installation complexe
 
@@ -93,7 +93,7 @@ header-includes: |
 - Des Cloud Providers (Google Cloud, Amazon Web Services, OVH...)
   - Leur infrastructures sont des machines à 64 coeur ou plus
   - Ils vendent des VM de 1 coeur à 16 coeurs
-- Un developpeur avec un ordinateur Linux qui a besoin ponctuellement d'un Windows (et vice-versa)
+- Un développeur avec un ordinateur Linux qui a besoin ponctuellement d'un Windows (et vice-versa)
 
 # Comment ça fonctionne ?
 
@@ -104,9 +104,9 @@ header-includes: |
 - Dockerfile: recette pour créer une image docker, elle se base 99% du temps sur une autre image existante
 - Image: archive en lecture seule contenant votre application (`docker build`)
   - Une image est identifiée par un identifiant ou son couple nom + tag
-- Container: instance d'une image en cours d'execution, votre application est en route (`docker run`)
+- Container: instance d'une image en cours d'exécution, votre application est en route (`docker run`)
   - Un container est identifié par un identifiant ou son nom
-- Docker Registry: répertoire en ligne d'images accessibles et utilisable ([hub.docker.com](https://hub.docker.com) par défaut)
+- Docker Registry: répertoire en ligne d'images accessibles et utilisables ([hub.docker.com](https://hub.docker.com) par défaut)
 
 ## Notions
 
@@ -142,10 +142,10 @@ CMD java $JAVA_OPTS -jar osm-boot.jar
 ### Qu'est-ce que des layers ?{.example}
 
 - Chaque instruction génère un layer qui est mis en cache
-- Lors d'une mise à jour du dockerfile, uniquement les instructions après la modification sont rejoués
+- Lors d'une mise à jour du dockerfile, uniquement les instructions après la modification sont rejouées
 - Une image recréée avec le même couple nom + tag écrase l'ancienne
 - On peut optimiser la création d'images
-  - Quand on a plusieurs applications qui ont besoin des mêmes dépendences, on peut créer une image de base
+  - Quand on a plusieurs applications qui ont besoin des mêmes dépendances, on peut créer une image de base
   - C'est une bonne pratique de supprimer ce qui n'est pas nécessaire dans l'image
 
 ## Conclusion {.standout}
