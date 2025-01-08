@@ -7,3 +7,4 @@ instagram:
   username: jox.it
 plugins:
   - jekyll-seo-tag
+  - jemoji
