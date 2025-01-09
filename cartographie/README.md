@@ -107,6 +107,7 @@ Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 - Après chaque énigme réussie, vous pouvez relier les résultats entre eux (en faisant une ligne droite ou un [grand cercle](https://fr.wikipedia.org/wiki/Grand_cercle))
 - Arrivé à l'arche perdue, une célébration doit être faite (idées: un message, une image, une animation...)
 - Avoir une page pour afficher toutes les actions effectuées par l'utilisateur
+- Vous pouvez ajouter une recherche par forward geocoding (vous serez jugés sur votre choix du fournisseur)
 
 Dans le cas où vous faîtes sans backend:
 
@@ -217,7 +218,6 @@ Dans le cas où vous le faites sans frontend:
 - Plusieurs scripts bash qui simulent les interactions de l'utilisateur et qui affiche les méthodes + uri + input + output
   - Un script du cas nominal où vous sélectionnez un voyage
   - Un script avec des actions loupées
-  - Un script pour montrer l'historique d'un joueur
 
 ## Projet: Une carte à mon goût
 
