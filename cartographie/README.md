@@ -9,7 +9,8 @@ Les supports de cours: [best-practices](https://joxit.dev/IG-Master2/beamer/best
 ## Restrictions frontend
 
 - Vos interfaces peuvent être faites en utilisant [React](https://fr.react.dev/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), [Android](https://developer.android.com/) ou [React Natvie](https://reactnative.dev/) (=> Pas de iOS ou Angular).
-- Plusieurs frameworks peuvent se mettre au-dessus comme [Next.js](https://nextjs.org/) et [Remix](https://remix.run/) au-dessus de React, [Nuxt.js](https://nuxt.com/) au-dessus de Vue.js...
+- Plusieurs frameworks peuvent se mettre au-dessus comme [Next.js](https://nextjs.org/) et [Remix](https://remix.run/) au-dessus de React, [Nuxt.js](https://nuxt.com/) au-dessus de Vue.js, etc.
+- N'hésitez pas à prendre des bibliothèques de composants pour accélerer vous développements.
 - Pour le fond de carte, vous avez le choix entre [JawgMaps](https://jawg.io/) et [OpenStreetMap](https://www.openstreetmap.org/).
 - Pour l'affichage des cartes voyez [MapLibre GL](https://maplibre.org/) et [Leaflet](https://leafletjs.com/)
   - N'hésitez pas à regarder les plugins existants pour accélérer vos développements
@@ -90,10 +91,10 @@ Complexité: 8.
 Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 
 - Une page web ou application contenant une carte et un emplacement pour l'énigme en cours
-  - L'énigme peut être sur la carte (composant flottant) ou à l'extérieur
+  - L'énigme peut être dans un composant fixe sur la carte ou à l'extérieur (sur les côtés)
   - Vous pouvez afficher la liste des énigmes réussies
     - Les énigmes réussies devront être visuellement marquées
-    - Dans le cas d'un composant flottant, pour voir les anciennes énigmes, il faudra utiliser des boutons précédent et suivant
+    - Dans le cas d'un composant fixe sur la carte, pour voir les anciennes énigmes, il faudra utiliser des boutons précédent et suivant
 - L'utilisateur doit se déplacer sur la carte pour trouver l'emplacement de l'énigme
   - Le point doit donc être caché jusqu'à un certain moment avant d'être révélé, vous avez 2 choix:
     - Vous pouvez vous baser sur le niveau de zoom de l'utilisateur pour décider si le point doit être visible ou pas
@@ -106,7 +107,7 @@ Voici une liste non exhaustive d'idées que vous pouvez implémenter:
       - Si le POI est trop loin de la solution, indiquez une distance approximative
 - Après chaque énigme réussie, vous pouvez relier les résultats entre eux (en faisant une ligne droite ou un [grand cercle](https://fr.wikipedia.org/wiki/Grand_cercle))
 - Arrivé à l'arche perdue, une célébration doit être faite (idées: un message, une image, une animation...)
-- Avoir une page pour afficher toutes les actions effectuées par l'utilisateur
+- Avoir une page pour afficher toutes les actions effectuées par l'utilisateur => L'énigme 1 a trois actions, l'énigme 2 a quatre actions, etc
 - Vous pouvez ajouter une recherche par forward geocoding (vous serez jugés sur votre choix du fournisseur)
 
 Dans le cas où vous faîtes sans backend:
@@ -155,7 +156,7 @@ Dans le cas où vous le faites sans frontend:
 - Plusieurs scripts bash qui simulent les interactions de l'utilisateur et qui affiche les méthodes + uri + input + output
   - Un script du cas nominal où tout se passe bien du premier coup
   - Un script avec des actions loupées
-  - Un script pour montrer l'historique d'un joueur
+  - Un script pour montrer l'historique des actions d'un joueur
 
 ## Projet: Voyage et partages
 
@@ -171,10 +172,10 @@ Voici une liste non exhaustive d'idées que vous pouvez implémenter:
   - Des markers à des emplacements importants (musées, points de vue, hôtel, aéroport...)
     - Ils doivent être interactifs, au clic une popup doit apparaître pour visualiser le lieu avec une ou des photos
     - Le nom du lieu doit être visible sans cliquer dessus
-  - Le tracé piéton ou voiture entre chaque markers (en fonction des distances)
+  - Le tracé piéton ou voiture entre chaque markers (un mode de transport spécifique par jour, il y a une restriction de 1req/s)
     - Vous devez mettre en évidence le temps de transports par mode pour le jour
     - Une différence visuelle doit être faite entre un tracé piéton et voiture
-    - Essayez de ne pas dépasser 25km par jours
+    - Essayez de ne pas dépasser 25km à pieds par jours
   - Un panneau de navigation pour aller sur différents jours
     - Vous devez avoir une flèche pour aller au jour d'avant ou d'après
     - Vous devez avoir un raccourci pour aller sur le premier jour et dernier jour
@@ -185,7 +186,7 @@ Voici une liste non exhaustive d'idées que vous pouvez implémenter:
 - Il doit y avoir les heures d'arrivée et de départ sur les lieux
   - Il faut prendre en compte le transport et le temps passé sur place
 - Vous pouvez ajouter une recherche par forward geocoding (vous serez jugés sur votre choix du fournisseur)
-  - Vous pouvez également y mettre du reverse geocoding quand l'utilisateur appuie sur une touche en même temps que cliquer
+  - Vous pouvez également y mettre du reverse geocoding quand l'utilisateur appuie sur une touche en même temps que cliquer, cela permet à l'utilisateur d'avoir des informations sur des lieux potentiellement pas visités
 
 Dans le cas où vous faîtes sans backend:
 
