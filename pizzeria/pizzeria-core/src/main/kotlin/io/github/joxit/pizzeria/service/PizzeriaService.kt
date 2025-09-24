@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.Transactional
 // For lazy loading
 @Transactional(readOnly = true) // For rollback and exceptions
 class PizzeriaService(
-  @Autowired private val pizzaDAO: PizzaDAO,
-  @Autowired private val pizzaSDJDAO: PizzaSDJDAO
+  @param:Autowired private val pizzaDAO: PizzaDAO,
+  @param:Autowired private val pizzaSDJDAO: PizzaSDJDAO
 ) {
   companion object {
     private val LOGGER: Logger = LoggerFactory.getLogger(PizzeriaService::class.java)

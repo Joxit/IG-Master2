@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController
 @CrossOrigin
 @RequestMapping(path = [ "/pizzas", "/pizzas/" ])
 class PizzeriaController(
-  @Autowired private val pizzeriaService: PizzeriaService
+  @param:Autowired private val pizzeriaService: PizzeriaService
 ) {
   companion object {
     private val LOGGER = LoggerFactory.getLogger(PizzeriaController::class.java)

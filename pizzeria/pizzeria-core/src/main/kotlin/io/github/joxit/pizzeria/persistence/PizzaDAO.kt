@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional // For rollback and exceptions
 class PizzaDAO(
   @PersistenceContext private val em: EntityManager, // From JPA
-  @Autowired private val jdbcTemplate: JdbcTemplate
+  @param:Autowired private val jdbcTemplate: JdbcTemplate
 ) {
 
   fun getAll(): List<Pizza> {

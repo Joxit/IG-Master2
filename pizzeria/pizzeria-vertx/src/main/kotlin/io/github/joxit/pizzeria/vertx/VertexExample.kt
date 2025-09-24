@@ -73,14 +73,12 @@ class VertexExample {
   }
 
   @Bean
-  @Autowired
-  fun jdbcTemplate(dataSource: DataSource): JdbcTemplate {
+  fun jdbcTemplate(@Autowired dataSource: DataSource): JdbcTemplate {
     return JdbcTemplate(dataSource)
   }
 
   @Bean
-  @Autowired
-  fun entityManagerFactory(dataSource: DataSource): LocalContainerEntityManagerFactoryBean {
+  fun entityManagerFactory(@Autowired dataSource: DataSource): LocalContainerEntityManagerFactoryBean {
     val factory = LocalContainerEntityManagerFactoryBean()
     factory.dataSource = dataSource
     val vendorAdapter = HibernateJpaVendorAdapter()
@@ -94,8 +92,7 @@ class VertexExample {
   }
 
   @Bean
-  @Autowired
-  fun transactionManager(entityManagerFactory: LocalContainerEntityManagerFactoryBean): PlatformTransactionManager {
+  fun transactionManager(@Autowired entityManagerFactory: LocalContainerEntityManagerFactoryBean): PlatformTransactionManager {
     return JpaTransactionManager(entityManagerFactory.nativeEntityManagerFactory)
   }
 

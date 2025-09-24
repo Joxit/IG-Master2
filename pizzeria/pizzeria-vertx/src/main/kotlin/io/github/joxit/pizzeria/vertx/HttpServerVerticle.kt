@@ -64,7 +64,8 @@ class HttpServerVerticle : AbstractVerticle() {
 
     vertx.createHttpServer(options)
       .requestHandler(router)
-      .listen {
+      .listen()
+      .onComplete {
         if (it.succeeded()) {
           startFuture.complete()
         } else {

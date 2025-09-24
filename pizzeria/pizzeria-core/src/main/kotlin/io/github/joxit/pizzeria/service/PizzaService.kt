@@ -22,8 +22,8 @@ import org.springframework.transaction.annotation.Transactional
 // For lazy loading and persist data
 @Transactional(readOnly = false, propagation = Propagation.REQUIRED)
 class PizzaService(
-  @Autowired private val pizzaDAO: PizzaDAO,
-  @Autowired private val ingredientDAO: IngredientDAO,
+  @param:Autowired private val pizzaDAO: PizzaDAO,
+  @param:Autowired private val ingredientDAO: IngredientDAO,
 ) {
   @Transactional(readOnly = true)
   fun getPizza(name: String): PizzaDTO {

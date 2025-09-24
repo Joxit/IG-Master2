@@ -8,7 +8,7 @@ dependencies {
 
   api("com.jolbox:bonecp:${property("version.bonecp")}")
   api("xml-apis:xml-apis:${property("version.xml-apis")}")
-  api("jakarta.persistence:jakarta.persistence-api:${property("version.jakarta")}")
+  api("jakarta.persistence:jakarta.persistence-api:${property("version.jakarta.persistence")}")
   api("org.slf4j:jcl-over-slf4j:${property("version.slf4j")}")
   api("ch.qos.logback:logback-classic:${property("version.logback")}")
   api("mysql:mysql-connector-java:${property("version.mysql")}")
