@@ -2,7 +2,7 @@
 title: Introduction à Spring et Hibernate
 subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 27 Septembre 2024
+date: 26 Septembre 2025
 theme: metropolis
 toc: true
 section-titles: false
@@ -35,7 +35,7 @@ build: pandoc -f markdown -st beamer spring-hibernate.beamer -B aboutme.tex -A t
 ### Histoire de JEE
 
 - Création en 1999 sous Java 1.2
-- Version actuelle Jakarta EE 10
+- Version actuelle Jakarta EE 11 (2025-06-26)
 - Ensemble de Java Specification Requests ou JSR
   - JTA (Java Transaction API)
   - JDBC (Java DataBase Connection)
@@ -264,7 +264,7 @@ vs
 Spring Boot Weblfux (Réactive)
 
 [à montrer-Reactive-1]: <> (pizzeria-webflux: Application pour les anotation et webservice)
-[à montrer-Reactive-2]: <> (pizzeria-webflux: Sur des requêtes utilisant la BDD cela ne va rien changer (dangeureux même))
+[à montrer-Reactive-2]: <> (pizzeria-webflux: Sur des requêtes utilisant la BDD cela ne va rien changer, c'est même dangereux)
 [à montrer-Reactive-3]: <> (perf: entre spring boot et webflux sur empty
 Servlet: 11882.75 Requests/sec
 wrk -t 4 -c 50 http://127.0.0.10:10000/pizzas/?type=empty

@@ -15,6 +15,6 @@ pluginManagement {
     id("org.jetbrains.kotlin.plugin.spring") version "${extra["version.kotlin"]}"
     id("org.springframework.boot") version "${extra["version.spring.boot"]}"
     id("com.github.ben-manes.versions") version "${extra["version.versions-plugin"]}"
-    id("com.github.johnrengelman.shadow") version "${extra["version.shadow-plugin"]}"
+    id("com.gradleup.shadow") version "${extra["version.shadow-plugin"]}"
   }
 }

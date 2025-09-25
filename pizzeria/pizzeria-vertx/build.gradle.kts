@@ -1,6 +1,6 @@
 plugins {
   java
-  id("com.github.johnrengelman.shadow")
+  id("com.gradleup.shadow")
 }
 
 tasks.shadowJar {
@@ -17,6 +17,7 @@ dependencies {
   implementation("org.springframework:spring-context")
   implementation("org.springframework:spring-orm")
   implementation("org.springframework.data:spring-data-jpa")
+  implementation("org.springframework.boot:spring-boot-starter-validation")
 
   implementation("com.fasterxml.jackson.core:jackson-databind:${property("version.jackson")}")
   implementation("io.vertx:vertx-web:${property("version.vertx")}")

@@ -86,7 +86,7 @@ class HttpServerVerticle : AbstractVerticle() {
   }
 
   private fun corsHandler() = CorsHandler.create()
-    .addRelativeOrigin(".*")
+    .addOriginWithRegex(".*")
     .allowedMethod(HttpMethod.GET)
     .allowedMethod(HttpMethod.POST)
     .allowedMethod(HttpMethod.PUT)

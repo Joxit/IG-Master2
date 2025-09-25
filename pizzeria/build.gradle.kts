@@ -6,7 +6,7 @@ plugins {
   kotlin("plugin.serialization")
   id("com.github.ben-manes.versions")
   id("org.springframework.boot") apply false
-  id("com.github.johnrengelman.shadow") apply false
+  id("com.gradleup.shadow") apply false
   id("org.jetbrains.kotlin.plugin.spring") apply true
 }
 

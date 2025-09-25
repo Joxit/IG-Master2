@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 # environment for GitHub CI
-if [ -d "/usr/lib/jvm/java-17-openjdk-amd64/" ]; then
-  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
+JAVA_DIRECTORY=/usr/lib/jvm/java-21-openjdk-amd64/
+if [ -d "$JAVA_DIRECTORY" ]; then
+  export JAVA_HOME=$JAVA_DIRECTORY
 fi
 
 DIR=$(pwd)
