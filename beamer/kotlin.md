@@ -2,12 +2,11 @@
 title: Introduction à Kotlin
 subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 27 Septembre 2024 & 11 Octobre 2024
+date: 26 Septembre 2025
 theme: metropolis
 toc: true
 section-titles: false
 pagestyle: empty
-filter: code-filter.lua
 header-includes: |
   \newcommand{\hideFromPandoc}[1]{#1}
   \usepackage{fourier}
@@ -15,13 +14,13 @@ header-includes: |
   \metroset{block=fill}
   \newcommand{\sectionimage}{Foo}
   \newcommand{\imagedirectory}{kotlin-images}
-  \AtBeginEnvironment{block}{\setbeamercolor{itemize item}{fg=jawgMaps}}
-  \AtBeginEnvironment{block}{\setbeamercolor{itemize subitem}{fg=jawgMaps}}
   \usepackage{dirtytalk}
 build: pandoc -f markdown -st beamer kotlin.beamer -B aboutme.tex -A takima.tex -o kotlin.pdf
 ---
 
 # Kotlin
+
+[introduction]: <> (C'est un cours sur Kotlin, mais je suis certains que je vais également vous apprendre des choses sur Java que vous ne connaissez pas ou n'utilisez pas.)
 
 ---
 
@@ -36,6 +35,8 @@ build: pandoc -f markdown -st beamer kotlin.beamer -B aboutme.tex -A takima.tex 
   - Open Source sous license Apache 2
 - Support total dans Android en 2017
 - Devenu langage par défaut de Android en mai 2019
+
+---
 
 ## Kotlin
 
@@ -52,7 +53,9 @@ build: pandoc -f markdown -st beamer kotlin.beamer -B aboutme.tex -A takima.tex 
   - Native Android/iOS/mac/Linux/Windows
   - Web Assembly
 
-## Kotlin Multiplatforme
+---
+
+## Kotlin Multi plateforme
 
 \center
 ![](./kotlin-images/kotlin-MPP.png)
@@ -73,6 +76,8 @@ build: pandoc -f markdown -st beamer kotlin.beamer -B aboutme.tex -A takima.tex 
   - Kotlin se détache des versions Java
 
 # Les concepts Kotlin
+
+---
 
 ## Les concepts Kotlin
 
@@ -101,8 +106,7 @@ class HelloWorld {
 ```
 
 ```java
-// Preview de Java 21 (Septembre 2023)
-// Bientôt dans Java (ETA 2024)
+// Ajouté depuis Java 25 (Septembre 2025)
 void main() {
   System.out.println("Hello, World!");
 }
@@ -169,6 +173,8 @@ int c;
 c = 3;
 ```
 
+---
+
 ## Exemple variables Kotlin
 
 ```kotlin
@@ -192,6 +198,8 @@ val c: Int
 c = 3
 ```
 
+---
+
 ## Kotlin vs Java
 
 ### Les différences {.alert}
@@ -203,7 +211,9 @@ c = 3
 - Les primitives Java ont une majuscule en Kotlin (`int` devient `Int`)
 - La classe Java `Object` devient `Any` en Kotlin
 
-## Example functions Java
+---
+
+## Example fonctions Java
 
 ```java
 public int sum(int a, int b) {
@@ -231,6 +241,8 @@ fun sum(a: Int, b: Int): Int {
 internal fun mul(a: Int, b: Int) = a * b
 ```
 
+---
+
 ## Kotlin vs Java
 
 ### Les ressemblances {.example}
@@ -244,6 +256,8 @@ internal fun mul(a: Int, b: Int) = a * b
   - Pour les functions simples, on peut mettre un `=` avec le retour
   - Le type de retour se met toujours après les déclarations
   - Les access modifiers sont : `public` (par défault); `internal` (=> rien en Java); `protected`; `private`
+
+---
 
 ## Example conditions if Java
 
@@ -263,6 +277,8 @@ int maxOf(int a, int b) {
   return a > b ? a : b;
 }
 ```
+
+---
 
 ## Example conditions Kotlin
 
@@ -284,6 +300,8 @@ fun maxOf(a: Int, b: Int): Int {
 fun maxOf(a: Int, b: Int) = if (a > b) a else b
 ```
 
+---
+
 ## Kotlin vs Java
 
 ### Les ressemblances {.example}
@@ -295,6 +313,8 @@ fun maxOf(a: Int, b: Int) = if (a > b) a else b
 - En Kotlin:
   - Le `return` peut se mettre avant le `if`
   - L'opérateur ternaire n'existe pas, c'est un `if`
+
+---
 
 ## Example expressions `switch` Java
 
@@ -310,6 +330,8 @@ int switchCase(int x) {
 }
 ```
 
+---
+
 ## Example expressions `switch` Java 12
 
 ```java
@@ -323,22 +345,46 @@ int switchCase(int x) {
 }
 ```
 
+---
+
 ## Example Pattern Matching `switch` Java 21
 
 ```java
 // Pattern Matching dans le switch/case
 // Ajouté depuis Java 21 (Septembre 2023)
 String switchCase(Object obj) {
+  if (obj instanceof Human(String name, String surname)) { /* ... */ }
   return switch (obj) {
     case String s -> String.format("String %s", s);
-    case Integer i && i >= 0 // restrindre le pattern
+    case Integer i when (i >= 0) // restrindre le pattern
         -> String.format("positive int %d", i);
-    case Integer i && i < 0
+    case Integer i when (i < 0)
         -> String.format("negative int %d", i);
+    case Human(String name, String surname) // record
+        -> String.format("%s %s", name, surname);
     default -> obj.toString();
   };
 }
 ```
+
+---
+
+## Example Pattern Matching unused `switch` Java 22
+
+```java
+// Pattern Matching avec variable inutilisé
+// Ajouté depuis Java 22 (Mars 2024)
+String switchCase(Object obj) {
+  if (obj instanceof Human(String name, _)) { /* ... */ }
+  return switch (obj) {
+    case Human(_, String surname) // record
+        -> String.format("%s", surname);
+    default -> obj.toString();
+  };
+}
+```
+
+---
 
 ## Example expressions `when` Kotlin
 
@@ -359,6 +405,8 @@ fun switchCase(x: Int): Int =
   }
 ```
 
+---
+
 ## Example expressions `when` Kotlin
 
 ```kotlin
@@ -369,6 +417,8 @@ fun switchCase(x: Int) =
     else -> x * 2
   }
 ```
+
+---
 
 ## Example Pattern Matching `when` Kotlin
 
@@ -390,35 +440,60 @@ fun switchCase(o: Any): String =
   }
 ```
 
+---
+
+## Example Pattern Matching `when` Kotlin 2.2.20
+
+```kotlin
+fun switchCase(o: Any): String =
+  when (o) {
+    // `Guard conditions` Septembre 2025
+    is Int if o >= 0 -> "Number ${o + 1} > 0"
+    is Int if o < 0 -> "Number ${o - 1} < 0"
+    is String if o.length > 5 -> "String ${o.lowercase()}"
+    else -> o.toString()
+  }
+```
+
+---
+
 ## Kotlin vs Java
 
 ### Les ressemblances {.example}
 
-- On peut combiner plusieurs options qui retournen la même instruction
+- On peut combiner plusieurs options qui retournent la même instruction
 
 ### Les différences {.alert}
 
 - Le mot clé pour les expression est différente entre Java et Kotlin, nous avons le `switch` et `when`
 - Depuis Java 12 les expressions sont plus semblable à Kotlin
 - Possibilité de mettre des conditions plus complexes dans les options en Kotlin
-- En Java on utilise `yield` dans les cas complexes, cela determine la valeure de retour du `switch`
-- Le pattern matching kotlin ne permet pas de restrindre après une selection de type
+- En Java on utilise `yield` dans les cas complexes, cela determine la valeur de retour du `switch`
+- Le pattern matching Kotlin ne permet pas de restreindre après une selection de type
+
+---
 
 ## Example boucles `for` Java
 
 ```java
-List<String> list = Arrays.asList("a", "b", "c", "d");
-for (int i = 0; i < list.size(); i++) {
-  System.out.println(list.get(i));
+usageFor() {
+  List<String> list = Arrays.asList("a", "b", "c", "d");
+  for (int i = 0; i < list.size(); i++) {
+    System.out.println(list.get(i));
+  }
 }
 ```
 
 ```java
-var list = Arrays.asList("a", "b", "c", "d");
-for (String elt : list) {
-  System.out.println(elt);
+usageAsList() {
+  var list = Arrays.asList("a", "b", "c", "d");
+  for (String elt : list) {
+    System.out.println(elt);
+  }
 }
 ```
+
+---
 
 ## Example boucles `for` Kotlin
 
@@ -443,23 +518,31 @@ for (i in list.size - 1 downTo 0 step 2) { // Range
 }
 ```
 
+---
+
 ## Example boucles `while` et `do/while` Java/Kotlin
 
 ```java
-var n = 0;
-while (n < 0) {
-  System.out.println(n);
-  n++;
+usageWhile() {
+  var n = 0;
+  while (n < 0) {
+    System.out.println(n);
+    n++;
+  }
 }
 ```
 
 ```java
-var n = 0;
-do {
-  System.out.println(n);
-  n++;
-} while (n < 0);
+usageDoWhile() {
+  var n = 0;
+  do {
+    System.out.println(n);
+    n++;
+  } while (n < 0);
+}
 ```
+
+---
 
 ## Kotlin vs Java
 
@@ -473,18 +556,26 @@ do {
 - Création de liste plus simple en Kotlin
 - Les `Range` dans Kotlin permettent à la fois de créer des listes de nombres mais également de gérer les conditions d'arrêt des boucles `for`
 
+---
+
 ## Example boucles `forEach` et `map` Java
 
 ```java
 // Depuis Java 8 (Mars 2014)
-var list = Arrays.asList("a", "b", "c", "d")
-  .stream()
-  .map(elt -> elt + "_" + elt)
-  .collect(Collectors.toList());
-list.forEach(elt -> System.out.println(elt));
-// Equivalent à
-list.forEach(System.out::println);
+usageForEach() {
+  var list = Arrays.asList("a", "b", "c", "d")
+      .stream()
+      .map(elt -> elt + "_" + elt)
+      .collect(Collectors.toList());
+  list.forEach(elt -> System.out.println(elt));
+  // Equivalent à
+  list.forEach(System.out::println);
+}
 ```
+
+---
+
+## Example boucles `forEach` et `map` Java
 
 ```java
 // Depuis Java 16 (Mars 2021)
@@ -493,6 +584,8 @@ var list = Arrays.asList("a", "b", "c", "d")
   .map(elt -> elt + "_" + elt)
   .toList();
 ```
+
+---
 
 ## Example boucles `forEach` et `map` Kotlin
 
@@ -511,6 +604,8 @@ list.forEachIndexed {
 }
 ```
 
+---
+
 ## Kotlin vs Java
 
 ### Les ressemblances {.example}
@@ -525,6 +620,8 @@ list.forEachIndexed {
   - Très verbeuse, il faut commencer par `stream()` et finir par `collect()`
   - Java essaie de rattraper son retard avec l'ajout de `toList()` en 2021
   - Pas d'équivalent à `forEachIndexed`
+
+---
 
 ## Example POJO avant `record` Java
 
@@ -545,6 +642,8 @@ public class Human {
 }
 ```
 
+---
+
 ## Example POJO `record` Java
 
 ```java
@@ -557,15 +656,21 @@ public record Human(String name, String surname) {
 }
 ```
 
+## Example POJO `record` Java
+
 ```java
 // Création des objets
-var man = new Human("John", "Doe");
-var woman = new Human("Jane");
-System.out.println(man + " / " + man.name());
-// Human[name=John, surname=Doe] / John
-System.out.println(woman);
-// Human[name=Jane, surname=null]
+usageRecord() {
+  var man = new Human("John", "Doe");
+  var woman = new Human("Jane");
+  System.out.println(man + " / " + man.name());
+  // Human[name=John, surname=Doe] / John
+  System.out.println(woman);
+  // Human[name=Jane, surname=null]
+}
 ```
+
+---
 
 ## Example POJO `data class` Kotlin
 
@@ -589,6 +694,8 @@ println(woman.copy(surname = "Doe"))
 // Human(name=Jane, surname=Doe)
 ```
 
+---
+
 ## Kotlin vs Java
 
 ### Définitions {.example}
@@ -603,6 +710,8 @@ println(woman.copy(surname = "Doe"))
 - Java nécessite toujours l'utilisation d'accolades lors de la déclaration de `record`
 
 # Les exclusivités de Kotlin
+
+---
 
 ## Null safety : Safe Calls
 
@@ -621,6 +730,8 @@ println(nullString?.lowercase())
 // -> null
 ```
 
+---
+
 ## Null safety : Elvis Operator `?:`
 
 ```kotlin
@@ -633,6 +744,8 @@ println(nullString ?: "C'était null")
 // -> "C'était null"
 ```
 
+---
+
 ## Null safety : Unsafe Call
 
 ```kotlin
@@ -644,6 +757,8 @@ println(nullableString!!)
 println(nullString!!)
 // -> throw une exception `NullPointerException`
 ```
+
+---
 
 ## String et templates
 
@@ -660,10 +775,12 @@ println("""En $s
   """.trimIndent())
 ```
 
+---
+
 ## Les extensions
 
 ```kotlin
-fun String.customExtension(s: String): Int {
+fun String.customExtension(s: String): String {
   return "$this $s"
 }
 
@@ -674,6 +791,8 @@ fun main() {
   // -> "Test d'une extension Kotlin"
 }
 ```
+
+---
 
 ## Les opérateurs
 
@@ -693,6 +812,8 @@ fun main() {
 }
 ```
 
+---
+
 ## Destructurer des objets
 
 ```kotlin
@@ -708,6 +829,8 @@ for ((_, surname) in listOf(
   // M.Galilei is an astronomer & physicist
 }
 ```
+
+---
 
 ## Initialisation `lazy` et `lateinit`
 
@@ -725,22 +848,7 @@ class LazyClass {
 }
 ```
 
-## Valeur par défaut et paramètre nommé
-
-```kotlin
-data class HugeClass(
-  val param1: String = "1",
-  val param2: String = "2",
-  val param3: String = "3",
-)
-
-fun main() {
-  println(HugeClass("5"))
-  // HugeClass(param1=5, param2=2, param3=3)
-  println(HugeClass("6", param3 = "7"))
-  // HugeClass(param1=6, param2=2, param3=7)
-}
-```
+---
 
 ## Valeur par défaut et paramètre nommé
 
@@ -758,6 +866,27 @@ fun main() {
   // HugeClass(param1=6, param2=2, param3=7)
 }
 ```
+
+---
+
+## Valeur par défaut et paramètre nommé
+
+```kotlin
+data class HugeClass(
+  val param1: String = "1",
+  val param2: String = "2",
+  val param3: String = "3",
+)
+
+fun main() {
+  println(HugeClass("5"))
+  // HugeClass(param1=5, param2=2, param3=3)
+  println(HugeClass("6", param3 = "7"))
+  // HugeClass(param1=6, param2=2, param3=7)
+}
+```
+
+---
 
 ## TODO / `NotImplementedError`
 
@@ -769,6 +898,34 @@ fun getOrNull(): Any? =
 fun getOrNull(): Any? = { }
 // Ne va pas compiler car le retour ne match pas
 ```
+
+---
+
+## Spaces enclosed in backticks
+
+```kotlin
+class MyTestCase {
+  @Test fun `verifier que tout fonctionne`() {
+    /*...*/
+  }
+
+  @Test fun verifierQueToutFonctionne_backend() {
+    /*...*/
+  }
+}
+```
+
+---
+
+## Pour aller plus loin
+
+### News JVM
+
+- Stream Gatherers [JEP 485](https://openjdk.org/jeps/485) Java 24 (Mars 2025)
+- Scoped Values [JEP 506](https://openjdk.org/jeps/506) Java 25 (Septembre 2025)
+- Flexible Constructor Bodies [JEP 513](https://openjdk.org/jeps/513) Java 25 (Septembre 2025)
+
+---
 
 ## Conclusion {.standout}
 

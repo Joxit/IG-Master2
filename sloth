@@ -55,6 +55,8 @@ if [ "$1" = "pizzeria" ]; then
       docker compose build pizzeria-servlet pizzeria-webflux pizzeria-boot pizzeria-vertx
       docker compose up -d pizzeria-servlet pizzeria-webflux pizzeria-boot pizzeria-vertx nginx pizzeria-ui
       ;;
+    pdf)
+      ;;
     *)
       echo Nothing to do for $1 $2
       ;;
@@ -91,6 +93,7 @@ if [ "$2" = "pdf" ]; then
     ;;
   esac
   if [ -n "$pdf_basename" ]; then
+    echo Will build $pdf_basename.pdf
     dirname="$(echo $(dirname $0)/beamer | sed 's,//,/,g')"
     cd $dirname
     pandoc -f markdown -st beamer $pdf_basename.md $opts -o $pdf_basename.pdf --lua-filter code-filter.lua
