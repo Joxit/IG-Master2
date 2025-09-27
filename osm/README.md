@@ -162,5 +162,5 @@ Maintenant nous allons ajouter des points à la carte. Nous avons à disposition
 ### Les classes Java et Spring
 
 - `InputStream`: Flux de donnée d'un fichier. Peut être lu une fois pour renvoyer des bytes ou un String.
-- `MediaType`: Vous permet d'acceder aux headers souvent utilisés comme `IMAGE_PNG_VALUE` ou `APPLICATION_JSON_VALUE`.
+- `MediaType`: Vous permet d'accéder aux headers souvent utilisés comme `IMAGE_PNG_VALUE` ou `APPLICATION_JSON_VALUE`.
 - `Resource`: Permet d'injecter des resources du classpath.

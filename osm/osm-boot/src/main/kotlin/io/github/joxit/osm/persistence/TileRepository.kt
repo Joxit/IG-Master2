@@ -15,6 +15,9 @@ import org.apache.batik.util.XMLResourceDescriptor
 import org.springframework.core.io.Resource
 import org.w3c.dom.Document
 
+/**
+ * Repository avec le code métier qui génère les tuiles en PNG.
+ */
 class TileRepository(private val worldSVG: Resource) {
   private fun getWorldSVG(): Document {
     try {

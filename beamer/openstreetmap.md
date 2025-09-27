@@ -2,7 +2,7 @@
 title: La cartographie avec OpenStreetMap
 subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 11 Octobre 2024
+date: 10 Octobre 2025
 theme: metropolis
 toc: true
 section-titles: false
@@ -63,7 +63,7 @@ build: pandoc -f markdown -st beamer openstreetmap.beamer -B aboutme.tex -A taki
 
 ## La donnée OSM
 
-\center\Large Open Database License (ODbL)
+### Open Database License (ODbL) {.alert}
 
 - Possibilité d'utiliser la donnée publiquement et commercialement
 - Obligation de maintenir la license sur la donnée après ajout/modification

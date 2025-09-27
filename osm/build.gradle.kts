@@ -22,8 +22,6 @@ tasks.dependencyUpdates {
   }
 }
 
-val javaVersion = JavaVersion.VERSION_17
-
 allprojects {
   apply(plugin = "idea")
 
@@ -39,15 +37,6 @@ allprojects {
 subprojects {
   apply(plugin = "java")
   apply(plugin = "kotlin")
-
-  tasks.compileKotlin {
-    kotlinOptions.jvmTarget = javaVersion.toString()
-  }
-
-  java {
-    sourceCompatibility = javaVersion
-    targetCompatibility = javaVersion
-  }
 
   dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:${property("version.spring.boot")}"))
