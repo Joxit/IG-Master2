@@ -17,7 +17,7 @@ dependencies {
   implementation("jakarta.ws.rs:jakarta.ws.rs-api:${property("version.jakarta")}")
   implementation("jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:${property("version.jstl")}")
   implementation("org.glassfish.web:jakarta.servlet.jsp.jstl:${property("version.jstl")}")
-  implementation("com.fasterxml.jackson.core:jackson-databind:${property("version.jackson")}")
+  implementation("tools.jackson.core:jackson-databind:${property("version.jackson")}")
   compileOnly("jakarta.servlet:jakarta.servlet-api:${property("version.servlet")}")
   compileOnly("org.apache.tomcat.embed:tomcat-embed-core:${property("version.tomcat")}")
 }

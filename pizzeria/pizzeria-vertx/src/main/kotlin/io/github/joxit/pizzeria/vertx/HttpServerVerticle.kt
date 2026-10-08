@@ -69,8 +69,8 @@ class HttpServerVerticle : AbstractVerticle() {
         if (it.succeeded()) {
           startFuture.complete()
         } else {
-          LOGGER.info("Vertex node failed to start")
           startFuture.fail(it.cause())
+          LOGGER.error("Vertex node failed to start")
         }
       }
   }

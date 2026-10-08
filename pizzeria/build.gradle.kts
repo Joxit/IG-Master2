@@ -4,7 +4,7 @@ plugins {
   kotlin("jvm")
   kotlin("plugin.jpa")
   kotlin("plugin.serialization")
-  id("com.github.ben-manes.versions")
+  id("io.github.ben-manes.versions")
   id("org.springframework.boot") apply false
   id("com.gradleup.shadow") apply false
   id("org.jetbrains.kotlin.plugin.spring") apply true

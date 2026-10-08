@@ -6,8 +6,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc
 
 @EnableWebMvc
 @SpringBootApplication
-class Application
+class SpringBootExample
 
 fun main(args: Array<String>) {
-  SpringApplication.run(Application::class.java, *args)
+  SpringApplication.run(SpringBootExample::class.java, *args)
 }

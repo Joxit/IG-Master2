@@ -19,9 +19,13 @@ dependencies {
   implementation("org.springframework.data:spring-data-jpa")
   implementation("org.springframework.boot:spring-boot-starter-validation")
 
-  implementation("com.fasterxml.jackson.core:jackson-databind:${property("version.jackson")}")
-  implementation("io.vertx:vertx-web:${property("version.vertx")}")
-  implementation("io.vertx:vertx-lang-kotlin:${property("version.vertx")}")
+  implementation("tools.jackson.core:jackson-databind:${property("version.jackson")}")
+  implementation("io.vertx:vertx-web:${property("version.vertx")}"){
+    exclude(group = "com.fasterxml.jackson.core", module = "jackson-core")
+  }
+  implementation("io.vertx:vertx-lang-kotlin:${property("version.vertx")}"){
+    exclude(group = "com.fasterxml.jackson.core", module = "jackson-core")
+  }
   implementation("javax.annotation:javax.annotation-api:${property("version.javax")}")
   implementation("org.javassist:javassist:${property("version.javassist")}")
 }

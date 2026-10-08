@@ -6,8 +6,8 @@ import org.springframework.web.reactive.config.EnableWebFlux
 
 @EnableWebFlux
 @SpringBootApplication
-class Application
+class WebfluxExample
 
 fun main(args: Array<String>) {
-  SpringApplication.run(Application::class.java, *args)
+  SpringApplication.run(WebfluxExample::class.java, *args)
 }

@@ -1,13 +1,13 @@
 ## Sujet: Introduction à Spring et Hibernate
 
-Pour executer ce projet vous aurez besoin de:
+Pour executer ce projet, vous aurez besoin de :
 
 - [Java JDK 17 ou +](https://adoptopenjdk.net/) (n'oubliez pas de configurer votre JAVA_HOME)
-- [docker](https://docs.docker.com/install/#supported-platforms) (n'oubliez pas de lancer la commande `sudo usermod -aG docker $(whoami)` puis redemarrez votre ordinateur)
+- [docker](https://docs.docker.com/install/#supported-platforms) (n'oubliez pas de lancer la commande `sudo usermod -aG docker $(whoami)` puis redémarrez votre ordinateur)
 - [docker-compose](https://docs.docker.com/compose/install/)
 - [nodejs](https://nodejs.org/en/download/package-manager/)
 
-1.  Pour lancer votre base de données (ici ça sera MySQL). J'utilise `docker-compose` pour vous éviter d'installer MySQL sur votre machine et avoir la configuration complète directement. `docker-compose` va vous cacher toutes les commandes docker qui sont dérrière. L'option `-d` ici permet de lancer le container en arrière plan.
+1.  Pour lancer votre base de données (ici ça sera MySQL). J'utilise `docker-compose` pour vous éviter d'installer MySQL sur votre machine et avoir la configuration complète directement. `docker-compose` va vous cacher toutes les commandes docker qui sont dérrière. L'option `-d` ici permet de lancer le container en arrière-plan.
 
   `docker-compose up -d mysql-db`
 
