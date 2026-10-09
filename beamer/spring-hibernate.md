@@ -2,7 +2,7 @@
 title: Introduction à Spring et Hibernate
 subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 26 Septembre 2025
+date: 9 Octobre 2026
 theme: metropolis
 toc: true
 section-titles: false
@@ -267,11 +267,11 @@ Spring Boot Weblfux (Réactive)
 [à montrer-Reactive-2]: <> (pizzeria-webflux: Sur des requêtes utilisant la BDD cela ne va rien changer, c'est même dangereux)
 [à montrer-Reactive-3]: <> (perf: entre spring boot et webflux sur empty
 Servlet: 11882.75 Requests/sec
-wrk -t 4 -c 50 http://127.0.0.10:10000/pizzas/?type=empty
+wrk -t 8 -c 50 http://127.0.0.10:10000/pizzas/?type=empty
 Spring Boot: 12885.37 Requests/sec
-wrk -t 4 -c 50 http://127.0.0.10:10002/pizzas/?type=empty
+wrk -t 8 -c 50 http://127.0.0.10:10002/pizzas/?type=empty
 Spring Webflux: 13591.05 Requests/sec
-wrk -t 4 -c 50 http://127.0.0.10:10003/pizzas/?type=empty
+wrk -t 8 -c 50 http://127.0.0.10:10003/pizzas/?type=empty
 )
 
 # Et pour après ?

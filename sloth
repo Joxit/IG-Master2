@@ -64,7 +64,7 @@ if [ "$1" = "pizzeria" ]; then
 fi
 
 if [ "$2" = "pdf" ]; then
-  opts="-B aboutme.tex -A takima.tex"
+  opts="-B aboutme.tex"
   case "$1" in
     pizzeria|spring|hibernate|spring-hibernate*)
     pdf_basename="spring-hibernate"
