@@ -2,7 +2,7 @@
 title: Introduction à Kotlin
 subtitle: Institut Galilée - Master 2 P2S
 author: Jones Magloire
-date: 26 Septembre 2025
+date: 23 Octobre 2026
 theme: metropolis
 toc: true
 section-titles: false
@@ -708,6 +708,57 @@ println(woman.copy(surname = "Doe"))
 
 - Java essaie de rattraper son retard avec l'ajout des records en 2020
 - Java nécessite toujours l'utilisation d'accolades lors de la déclaration de `record`
+
+---
+
+## Example Lazy Constants Java
+
+```java
+class OrderController {
+  //  Preview Java 27 (Septembre 2026)
+  private final LazyConstant<Logger> logger
+      = LazyConstant.of(
+        () -> Logger.create(OrderController.class)
+      );
+
+  void submit(User user, List<Product> products) {
+      logger.get().info("order started");
+      // ...
+      logger.get().info("order submitted");
+  }
+}
+```
+
+---
+
+## Example Lazy Kotlin
+
+```kotlin
+class OrderController {
+  private val logger: Logger
+      by lazy {
+        Logger.create(OrderController::class)
+      }
+
+  fun submit(user: User, products: List<Product>) {
+      logger.info("order started");
+      // ...
+      logger.info("order submitted");
+  }
+}
+```
+
+---
+
+## Kotlin vs Java
+
+### Les ressemblances {.example}
+
+- Permet tous les deux d'instancier les variables à la demande
+
+### Les différences {.alert}
+
+- Plus de friction avec Java qui necessite de faire un `.get()` pour accéder à la valeur
 
 # Les exclusivités de Kotlin
 
