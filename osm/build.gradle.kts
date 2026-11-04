@@ -4,9 +4,9 @@ plugins {
   kotlin("jvm")
   kotlin("plugin.allopen")
   kotlin("plugin.noarg")
+  kotlin("plugin.spring")
   id("com.github.ben-manes.versions")
-  id("org.springframework.boot") apply false
-  id("org.jetbrains.kotlin.plugin.spring") apply true
+  id("org.springframework.boot")
 }
 
 fun isNonStable(version: String): Boolean {
@@ -23,8 +23,6 @@ tasks.dependencyUpdates {
 }
 
 allprojects {
-  apply(plugin = "idea")
-
   group = "io.github.joxit"
   version = "1.0-SNAPSHOT"
 
@@ -37,6 +35,7 @@ allprojects {
 subprojects {
   apply(plugin = "java")
   apply(plugin = "kotlin")
+  apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
   dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:${property("version.spring.boot")}"))

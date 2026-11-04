@@ -58,7 +58,7 @@ Vérifiez que le SDK utilisé par le projet est le même que celui qu'utilisera 
 
 ![00-gradle-JDK](./images/00-gradle-JDK.png)
 
-Pour vérifier que tout fonctionne correctement, vous pouvez lancer le projet, sur la partie de gauche (Projet), ouvrez le projet `osm` -> `osm-boot` -> `src` -> `main` -> `kotlin` -> `io.github.joxit.osm`. Faites un clique droit sur Application puis `Run Application.main()`.
+Pour vérifier que tout fonctionne correctement, vous pouvez lancer le projet, sur la partie de gauche (Projet), ouvrez le projet `osm` -> `osm-boot` -> `src` -> `main` -> `kotlin` -> `io.github.joxit.osm`. Faites un clique droit sur OSMApplication puis `Run OSMApplication.main()`.
 
 ![00-run-project](./images/00-run-project.png)
 
@@ -72,21 +72,19 @@ Dès que vous avez dans la console quelque chose ressemblant à cela, c'est que 
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.3.4.RELEASE)
 
-2020-11-02 07:11:55.234  INFO 8 --- [           main] io.github.joxit.osm.Application          : Starting Application v1.0-SNAPSHOT on 333bac29f1ba with PID 8 (/usr/src/osm/osm-boot.jar started by root in /usr/src/osm)
-2020-11-02 07:11:55.243  INFO 8 --- [           main] io.github.joxit.osm.Application          : No active profile set, falling back to default profiles: default
-2020-11-02 07:11:55.385  WARN 8 --- [kground-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-11-02 07:11:56.844  INFO 8 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-11-02 07:11:56.863  INFO 8 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-11-02 07:11:56.863  INFO 8 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
-2020-11-02 07:11:56.955  INFO 8 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-11-02 07:11:56.955  INFO 8 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1557 ms
-2020-11-02 07:11:57.623  INFO 8 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-11-02 07:11:57.639  INFO 8 --- [           main] io.github.joxit.osm.Application          : Started Application in 3.349 seconds (JVM running for 4.319)
-2020-11-02 07:13:35.754  INFO 8 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-11-02 07:13:35.754  INFO 8 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-11-02 07:13:35.769  INFO 8 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+ :: Spring Boot ::                (v3.5.6)
+
+2026-11-05T08:38:07.806+01:00  INFO 174700 --- [           main] io.github.joxit.osm.OSMApplicationKt     : Starting OSMApplicationKt using Java 25.0.1 with PID 174700 (/home/joxit/git/IG-Master2/osm/osm-boot/build/classes/kotlin/main started by joxit in /home/joxit/git/IG-Master2)
+2026-11-05T08:38:07.808+01:00  INFO 174700 --- [           main] io.github.joxit.osm.OSMApplicationKt     : No active profile set, falling back to 1 default profile: "default"
+2026-11-05T08:38:08.741+01:00  INFO 174700 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-05T08:38:08.761+01:00  INFO 174700 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-05T08:38:08.761+01:00  INFO 174700 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-11-05T08:38:08.814+01:00  INFO 174700 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-05T08:38:08.815+01:00  INFO 174700 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 963 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2026-11-05T08:38:09.513+01:00  INFO 174700 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-05T08:38:09.524+01:00  INFO 174700 --- [           main] io.github.joxit.osm.OSMApplicationKt     : Started OSMApplicationKt in 2.076 seconds (process running for 2.66)
 ```
 
 ![00-tomcat-running](./images/00-tomcat-running.png)
@@ -98,6 +96,7 @@ Vous pourrez contacter le serveur sur le port 8080. Si vous essayez d'aller sur 
 Pour réussir le TP, vous devez lire correctement le sujet et suivre les étapes.
 Tout est mentionné, pour la partie nominale (hors bonus) **VOUS N'AVEZ PAS DE FICHIER À CRÉER !** Tout a déjà été préparé !
 Si vous n'utilisez pas l'arborescence et les fichiers donnés, vous perdrez des points !
+L'utilisation de l'intélligence artificielle est tolérée, tant que vous en faites un bon usage, sinon vous vous retrouverez avec des malus.
 
 ### Le serveur de tuiles
 
@@ -135,13 +134,14 @@ Pour information, si vous souhaitez afficher des cartes sur un site web, vous de
 Maintenant nous allons ajouter des points à la carte. Nous avons à disposition la liste des préfectures de France au format GeoJSON. Le but sera de renvoyer cette liste via notre API de tuiles.
 
 1. **Utilisez la classe** `TileService`:
-   1. Faites en sorte que le GeoJSON `prefectures.geojson` des ressources, soit accessible dans votre service.
+   1. Faites en sorte que le GeoJSON `cities.geojson` des ressources, soit accessible dans votre service.
    2. Utilisez `@Value` de Spring.
+   2. Utilisez un `ObjectMapper` de Jackson.
    3. Attention [la méthode `getFile` ou l'objet `File`](https://stackoverflow.com/questions/14876836/file-inside-jar-is-not-visible-for-spring) sont à proscrire quand on utilise des fichiers dans le classpath.
 2. **Utilisez la classe** `TileController`:
-   1. La fonction getPrefectures devra répondre aux requêtes GET `/prefectures.geojson` et devra renvoyer un header `application/json`.
+   1. La fonction getCities devra répondre aux requêtes GET `/cities.geojson` et devra renvoyer un header `application/json`.
    2. Utilisez votre service pour renvoyer les préfectures.
-3. **Bonus**: Utilisez un cache mémoire pour ne pas à ouvrir le fichier à chaque fois.
+3. **Bonus**: Ne pas à ouvrir/convertir le fichier à chaque fois.
 
 ## Annexes
 
@@ -164,3 +164,4 @@ Maintenant nous allons ajouter des points à la carte. Nous avons à disposition
 - `InputStream`: Flux de donnée d'un fichier. Peut être lu une fois pour renvoyer des bytes ou un String.
 - `MediaType`: Vous permet d'accéder aux headers souvent utilisés comme `IMAGE_PNG_VALUE` ou `APPLICATION_JSON_VALUE`.
 - `Resource`: Permet d'injecter des resources du classpath.
+- `ObjectMapper`: Permet de parser des String (represantant des JSON) en objet java

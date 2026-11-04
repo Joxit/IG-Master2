@@ -28,7 +28,7 @@ dependencies {
 
   implementation("com.github.ben-manes.caffeine:caffeine:${property("version.caffeine")}")
 
-  implementation("mil.nga.sf:sf-geojson:${property("version.sf-geojson")}")
+  implementation("io.jawg.geojson:geojson-jackson:${property("version.jawg.geojson-jackson")}")
   api("org.apache.xmlgraphics:batik-svggen:${property("version.batik")}")
   api("org.apache.xmlgraphics:batik-dom:${property("version.batik")}")
   api("org.apache.xmlgraphics:batik-transcoder:${property("version.batik")}")
