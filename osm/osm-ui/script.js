@@ -1,3 +1,5 @@
+import * as maplibregl from 'https://unpkg.com/maplibre-gl@^6.16.0/dist/maplibre-gl.mjs';
+
 const URL_QUERY_PARAM_REGEX = /[&?]url=/;
 const URL_PARAM_REGEX = /^url=/;
 const DEFAULT_URL_ENDPOINT = 'http://127.0.0.1:8080';
@@ -101,31 +103,61 @@ function getRouting(c1, c2) {
 map.on("load", () => {
   // Code executé après le chargement de la carte
   // C'est ici qu'on peut ajouter de nouvelles sources ou de nouveaux layers
-  // Lien de l'API mapbox-gl-js : https://docs.mapbox.com/mapbox-gl-js/api/
   // Quelques méthodes utiles:
   // Ajout de source : map.addSource("nom-de-source", {type: "source-type", data: "data-url or content"})
   // Ajout de layer : map.addLayer("nom-de-layer", {id: "id-layer", type: "type-layer", source: "source-ref", paint: {}, layout: {}})
-  map.addSource("prefectures", {
+  map.addSource("cities", {
     "type": "geojson",
-    "data": `${getUrlQueryParam()}/prefectures.geojson`
+    "data": `${getUrlQueryParam()}/cities.geojson`
   })
   // Le style d'affichage pour les préfectures, un rond rouge
   map.addLayer({
-    "id": "prefectures-layer",
+    "id": "cities-circle",
     "type": "circle",
-    "source": "prefectures",
+    "source": "cities",
+    "filter": ["<=", ["get", "SCALERANK"], ["zoom"]],
     "paint": {
       "circle-radius": {
-        stops: [
+        "stops": [
           [0, 1],
-          [5, 4],
-          [13, 20],
-          [15, 150]
+          [5, 4]
         ]
       },
-      "circle-color": "#B42222"
+      "circle-color": "rgb(172, 59, 246)"
     }
   });
+  map.addLayer( {
+    "type": "symbol",
+    "id": "cities-text",
+    "source": "cities",
+    "filter": ["<", ["get", "SCALERANK"], ["zoom"]],
+    "layout": {
+      "text-anchor": "top",
+      "text-field": [
+        "coalesce",
+        [ "get", "NAME_FR" ],
+        [ "get", "NAME" ]
+      ],
+      "text-font": [
+        "Roboto Bold",
+        "Noto Bold"
+      ],
+      "text-offset": [ 0, 0.15 ],
+      "text-size": [
+        "interpolate",
+        [ "linear" ],
+        [ "zoom" ],
+        4.0, 12,
+        10.0, 22
+      ]
+    },
+    "paint": {
+      "text-color": "#ffffff",
+      "text-halo-blur": 1.0,
+      "text-halo-color": "hsl(0, 5%, 0%)",
+      "text-halo-width": 1.0
+    }
+  })
   // On prépare les sources pour le routing, pour le moment elle sont vides et seront remplies via un handler
   map.addSource('routing', { type: 'geojson', data: emptyGeojson })
   map.addSource('routing-start', { type: 'geojson', data: emptyGeojson })
